@@ -1,0 +1,261 @@
+{
+  "main": {
+    "id": "a40bf5efd8104b59",
+    "type": "split",
+    "children": [
+      {
+        "id": "75af77afe49ba885",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9b7c89858baa39e0",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "1_Project/4-1 학부/전산통계/2_학습자료/ML/6_SVM.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "6_SVM"
+            }
+          }
+        ]
+      },
+      {
+        "id": "b43764f99845932e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3e55317100bfdea8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1_Project/4-1 학부/전산통계/전통기말/6. SVM.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6. SVM"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5b200da2862c6c1a",
+    "type": "split",
+    "children": [
+      {
+        "id": "1595c743789f9388",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7f60d48998ab9292",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "3d4d7a7ce4da1331",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
+            }
+          },
+          {
+            "id": "f2d6e18c3378f652",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "북마크"
+            }
+          },
+          {
+            "id": "bbf861a6128f0f2f",
+            "type": "leaf",
+            "state": {
+              "type": "VIEW_TYPE_LONGFORM_EXPLORER",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "VIEW_TYPE_LONGFORM_EXPLORER"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "124a0a738b3f1328",
+    "type": "split",
+    "children": [
+      {
+        "id": "4065afeac8ba26fc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "019a51bbee125e14",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "1_Project/4-1 학부/회귀분석/학습자료/Lecture_10_Diagnostic_in_multiple_linear_regression_ver2_class.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Lecture_10_Diagnostic_in_multiple_linear_regression_ver2_class 의 백링크"
+            }
+          },
+          {
+            "id": "84bb063050daadcc",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "1_Project/4-1 학부/회귀분석/학습자료/Lecture_10_Diagnostic_in_multiple_linear_regression_ver2_class.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Lecture_10_Diagnostic_in_multiple_linear_regression_ver2_class 의 나가는 링크"
+            }
+          },
+          {
+            "id": "a67f2bb0affba781",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "태그"
+            }
+          },
+          {
+            "id": "01c1b54a6fdacf22",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "모델링 결과 보고서.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "모델링 결과 보고서 의 개요"
+            }
+          },
+          {
+            "id": "350dc1ead8d2bdfe",
+            "type": "leaf",
+            "state": {
+              "type": "mermaid-toolbar-view",
+              "state": {},
+              "icon": "trident-custom",
+              "title": "Mermaid Toolbar"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "bases:새 베이스 생성하기": false,
+      "templater-obsidian:Templater": false,
+      "mermaid-tools:Open Mermaid Toolbar": false
+    }
+  },
+  "active": "3e55317100bfdea8",
+  "lastOpenFiles": [
+    "1_Project/4-1 학부/전산통계/2_학습자료/ML/6_SVM.pdf",
+    "1_Project/4-1 학부/전산통계/전통기말/6. SVM.md",
+    "1_Project/4-1 학부/전산통계/2_학습자료/ML/7_Neural Network.pdf",
+    "1_Project/4-1 학부/전산통계/2_학습자료/ML/8_Deep Learning.pdf",
+    "1_Project/4-1 학부/전산통계/2_학습자료/ML/9_k-Means Clustering.pdf",
+    "1_Project/4-1 학부/전산통계/2_학습자료/ML/가설검정론.pdf",
+    "1_Project/4-1 학부/전산통계/2_학습자료/ML/기초통계학 강의노트.pdf",
+    "10팀(노동주)_모델링결과물.md",
+    "10팀(노동주)_기술설명서.md",
+    "모델링결과물.md",
+    "기술 명세서.md",
+    "안키에 정리해야 할 것들.md",
+    "1_Project/4-1 학부/회귀분석/회귀기말/13. Transformations and Weighted Least Squares.md",
+    "4_Archive/25-여름 알고리즘/2_학습자료/중간/06퀵정렬알고리즘.pdf",
+    "4_Archive/25-여름 알고리즘/2_학습자료/07외부정렬알고리즘.pdf",
+    "4_Archive/25-여름 알고리즘/2_학습자료/09힙정렬.pdf",
+    "4_Archive/25-여름 알고리즘/2_학습자료/10그래프탐색알고리즘.pdf",
+    "Untitled diagram-2025-11-20-081740.svg",
+    "Untitled diagram-2025-11-20-041848.svg",
+    "학부공부 확인사항.md",
+    "Pasted image 20251120130915.png",
+    "대학원 계획.md",
+    "1_Project/4-1 학부/계량경제학/계량기말/11. Topics(Dummy var.).md",
+    "1_Project/4-1 학부/계량경제학/계량기말/12. 이분산성.md",
+    "1_Project/4-1 학부/선형대수학/선대기말/10. Determinants.md",
+    "Pasted image 20251110223556.png",
+    "1_Project/4-1 학부/선형대수학/선대기말/9. Matlab.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/10. R-square.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/10. 어쩌구.md",
+    "Pasted image 20251110223611.png",
+    "Pasted image 20251110223658.png",
+    "Pasted image 20251110221522.png",
+    "Pasted image 20251110222809.png",
+    "Pasted image 20251110222839.png",
+    "Pasted image 20251110213310.png",
+    "1_Project/4-1 학부/회귀분석/회귀기말/12. interactions and qualitative variable.md",
+    "1_Project/4-1 학부/회귀분석/회귀기말/10. Diagnostics in multiple linear regression.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/5. 단순회귀모형 I.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/6. 단순회귀모형 II.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/7. 다중회귀모형 1.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/8. 다중회귀모형 2.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/8. 다중회귀분석 2.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/계량 중간 최종 압축노트.md",
+    "1_Project/4-1 학부/계량경제학/계량기말/10. R-square (final).md",
+    "1_Project/4-1 학부/전산통계/전통기말/5. Decision Tree.md"
+  ]
+}

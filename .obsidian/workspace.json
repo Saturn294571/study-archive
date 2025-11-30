@@ -1,0 +1,231 @@
+{
+  "main": {
+    "id": "fd8ec3d0a30b5608",
+    "type": "split",
+    "children": [
+      {
+        "id": "becd02d50ef9cca8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8e8096d1954c33de",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "1_Project/4-1 학부/회귀분석/기타/HW2_2025-1.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "HW2_2025-1"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8da65da15da254e9",
+    "type": "split",
+    "children": [
+      {
+        "id": "a00b184f5edd66c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0485ee94cd54e8b0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "caaa8bf5a918ff6d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
+            }
+          },
+          {
+            "id": "e483609a9d877ad3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "북마크"
+            }
+          },
+          {
+            "id": "04329535e99c9411",
+            "type": "leaf",
+            "state": {
+              "type": "VIEW_TYPE_LONGFORM_EXPLORER",
+              "state": {},
+              "icon": "longform",
+              "title": "Longform"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "84b35b5e8f43c9a7",
+    "type": "split",
+    "children": [
+      {
+        "id": "d911cd25ca7b2ea0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0699eab065383220",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "1_Project/4-1 학부/계량경제학/계량기말/12. 이분산성.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "12. 이분산성 의 백링크"
+            }
+          },
+          {
+            "id": "f2b047011e3568fb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "1_Project/4-1 학부/계량경제학/계량기말/12. 이분산성.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "12. 이분산성 의 나가는 링크"
+            }
+          },
+          {
+            "id": "0e3f3c6ca0d4a5ad",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "태그"
+            }
+          },
+          {
+            "id": "5a05dc611134647f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "1_Project/4-1 학부/계량경제학/계량기말/12. 이분산성.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "12. 이분산성 의 개요"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "bases:새 베이스 생성하기": false,
+      "templater-obsidian:Templater": false,
+      "mermaid-tools:Open Mermaid Toolbar": false
+    }
+  },
+  "active": "8e8096d1954c33de",
+  "lastOpenFiles": [
+    "1_Project/4-1 학부/회귀분석/기타/hw1_2025.pdf",
+    "1_Project/4-1 학부/회귀분석/기타/HW2_2025-1.pdf",
+    "1_Project/4-1 학부/회귀분석/기타/기말 계산관련 기출문제 풀이.pdf",
+    "1_Project/4-1 학부/선형대수학/선대기말/필기/9. Matlab.md",
+    "1_Project/4-1 학부/선형대수학/선대기말/필기/13. Similarity & Diagonalization.md",
+    "1_Project/4-1 학부/계량경제학/계량기말/학습자료/계량경제학 강의 14_내생성_천소라1127.pdf",
+    "1_Project/4-1 학부/계량경제학/계량기말/필기/14. 내생성.md",
+    "1_Project/4-1 학부/계량경제학/계량기말/학습자료/계량경제학 강의 14_내생성_천소라.pdf",
+    "templates/Map of contents.md",
+    "templates/BPP template.md",
+    "templates/Anki 요약 및 퀴즈, 쿼츠.md",
+    "학부공부 확인사항.md",
+    "무제.md",
+    "1_Project/4-1 학부/계량경제학/기타/image/스크린샷_20251016_004540.png",
+    "1_Project/4-1 학부/계량경제학/기타/image/Pasted image 20250916163013.png",
+    "1_Project/4-1 학부/회귀분석/회귀기말/필기/12. interactions and qualitative variable.md",
+    "1_Project/4-1 학부/계량경제학/기타/image",
+    "1_Project/4-1 학부/회귀분석/기타/mid_기출_prob.pdf",
+    "1_Project/4-1 학부/회귀분석/기타/숙제.md",
+    "1_Project/4-1 학부/회귀분석/기타/image/Pasted image 20251113155045.png",
+    "1_Project/4-1 학부/회귀분석/기타/image/Pasted image 20251015184508.png",
+    "1_Project/4-1 학부/회귀분석/회귀기말/학습자료/Lecture_15_Selection_ver3_class.pdf",
+    "1_Project/4-1 학부/회귀분석/기타/image",
+    "1_Project/4-1 학부/계량경제학/계량기말/학습자료/계량경제학 강의 14_내생성_천소라1125-1.pdf",
+    "1_Project/4-1 학부/회귀분석/기타/기말 계산관련 출제문제.pdf",
+    "1_Project/4-1 학부/회귀분석/회귀기말/필기/15. Selection.md",
+    "1_Project/4-1 학부/선형대수학/선대기말/필기/12. Eigen Space & Characteristic EQ.md",
+    "1_Project/4-1 학부/계량경제학/기타/image/Pasted image 20251107133857.png",
+    "1_Project/4-1 학부/전산통계/전통기말/6. SVM.md",
+    "1_Project/4-1 학부/선형대수학/선대기말/필기/11. Eigenvalues & Eigenvectors.md",
+    "1_Project/4-1 학부/계량경제학/기타/Pasted image 20250916152108.png",
+    "1_Project/4-1 학부/계량경제학/기타/Pasted image 20250915163337.png",
+    "1_Project/4-1 학부/계량경제학/기타/Pasted image 20250915150741.png",
+    "1_Project/4-1 학부/계량경제학/기타/image/Pasted image 20251107133336.png",
+    "1_Project/4-1 학부/선형대수학/기타/Pasted image 20251125104338.png",
+    "1_Project/4-1 학부/선형대수학/선대기말/필기/10. Determinants.md",
+    "1_Project/4-1 학부/계량경제학/계량기말/필기/13. 자기상관 & 구조적 변화.md",
+    "1_Project/4-1 학부/계량경제학/계량기말/필기/11. Topics(Dummy var.).md",
+    "1_Project/4-1 학부/계량경제학/계량기말/필기/12. 이분산성.md",
+    "1_Project/4-1 학부/회귀분석/회귀중간/필기/3. Simple regression Ⅰ.md",
+    "1_Project/4-1 학부/회귀분석/회귀기말/필기/9. Multiple regression 3.md",
+    "1_Project/4-1 학부/회귀분석/회귀기말/필기/11. Diagnostics in multiple linear regression II.md",
+    "1_Project/4-1 학부/선형대수학/선대중간/필기/무제.md",
+    "안키에 정리해야 할 것들.md",
+    "모델링결과물.md",
+    "기술 명세서.md"
+  ]
+}

@@ -1,0 +1,60 @@
+/*
+  파일 최상단에 'cssclass: cornell-a4'를 추가했을 때만 적용되는 스타일
+*/
+
+/* --- 1. A4 페이지 틀 만들기 --- */
+/* cssclass가 적용된 파일의 미리보기(reading view) 영역 전체에 적용 */
+.markdown-rendered.cornell-a4 .markdown-preview-view {
+    /* A4 용지 크기 (가로 210mm, 세로 297mm) */
+    max-width: 210mm;
+    min-height: 287mm; /* 인쇄 여백 고려하여 약간 줄임 */
+  
+    /* 페이지를 화면 중앙에 배치하고 그림자 효과 추가 */
+    margin: 20px auto;
+    padding: 0; /* 내부 여백 초기화 */
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  
+    /* 구분선을 넣기 위해 position 속성 필요 */
+    position: relative;
+  }
+  
+  /* --- 2. 코넬 노트 레이아웃 (여백 및 구분선) --- */
+  /* 페이지 내부의 실제 내용이 담기는 컨테이너 */
+  .markdown-rendered.cornell-a4 .markdown-preview-sizer {
+    /* 코넬 노트 여백 설정 (상:20mm, 우:20mm, 하:50mm, 좌:60mm) */
+    padding: 20mm 20mm 50mm 60mm;
+  }
+  
+  /* 왼쪽 '소주제(Cues)' 영역을 구분하는 세로선 */
+  .markdown-rendered.cornell-a4 .markdown-preview-view::before {
+    content: '';
+    position: absolute;
+    top: 20mm; /* 상단 여백 제외 */
+    bottom: 50mm; /* 하단 요약 영역 제외 */
+    left: 55mm; /* 왼쪽 여백 안쪽에 선 위치 */
+    width: 1px;
+    background-color: #e0e0e0; /* 연한 회색선 */
+  }
+  
+  /* 아래쪽 '요약(Summary)' 영역을 구분하는 가로선 */
+  .markdown-rendered.cornell-a4 .markdown-preview-view::after {
+    content: '';
+    position: absolute;
+    bottom: 50mm; /* 하단 여백 시작 위치 */
+    left: 20mm; /* 좌측 페이지 여백 제외 */
+    right: 20mm; /* 우측 페이지 여백 제외 */
+    height: 1px;
+    background-color: #e0e0e0; /* 연한 회색선 */
+  }
+  
+  
+  /* --- 3. 인쇄 시 최적화 --- */
+  @media print {
+    .markdown-rendered.cornell-a4 .markdown-preview-view {
+      /* 인쇄 시에는 그림자, 바깥 여백 등 불필요한 요소 제거 */
+      box-shadow: none;
+      margin: 0;
+      min-height: auto;
+    }
+  }

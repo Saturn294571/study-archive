@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            overflow: hidden;
+        }
+        canvas {
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 순수 자바스크립트와 HTML5 캔버스를 이용한 포팅된 Pong 게임 코드
+
+        // HTML5 Canvas 요소 가져오기
+        const canvas = document.createElement('canvas');
+        document.body.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+
+        // 화면의 가로, 세로 크기 설정
+        const WIDTH = 1280;
+        const HEIGHT = 720;
+        canvas.width = WIDTH;
+        canvas.height = HEIGHT;
+
+        // 점수 표시를 위한 폰트 설정
+        ctx.font = `${WIDTH / 20}px Consolas`;
+        ctx.textAlign = 'center';
+
+        // 플레이어 및 상대방 패들 설정
+        const paddleWidth = 10;
+        const paddleHeight = 100;
+        const player = { x: WIDTH - 100, y: HEIGHT / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight, speed: 10 };
+        const opponent = { x: 100, y: HEIGHT / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight, speed: 7 };
+
+        // 공 설정 (초기 공 2개)
+        let balls = [];
+        function createBalls() {
+          balls = [];
+          for (let i = 0; i < 2; i++) {
+            const ball = {
+              x: WIDTH / 2,
+              y: HEIGHT / 2,
+              radius: 10,
+              xSpeed: (Math.random() > 0.5 ? 1 : -1) * (8 + Math.random() * 4),
+              ySpeed: (Math.random() > 0.5 ? 1 : -1) * (8 + Math.random() * 4),
+            };
+            balls.push(ball);
+          }
+        }
+        createBalls();
+
+        // 점수 초기화
+        let playerScore = 0;
+        let opponentScore = 0;
+
+        // 키 입력 상태 추적
+        const keys = { up: false, down: false };
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowUp') keys.up = true;
+          if (e.key === 'ArrowDown') keys.down = true;
+        });
+        document.addEventListener('keyup', (e) => {
+          if (e.key === 'ArrowUp') keys.up = false;
+          if (e.key === 'ArrowDown') keys.down = false;
+        });
+
+        // 게임 재설정
+        function resetGame() {
+          playerScore = 0;
+          opponentScore = 0;
+          createBalls();
+        }
+
+        // 게임 루프
+        function gameLoop() {
+          // 플레이어 패들 이동
+          if (keys.up && player.y > 0) player.y -= player.speed;
+          if (keys.down && player.y + player.height < HEIGHT) player.y += player.speed;
+
+          // 공 이동 및 충돌 처리
+          balls.forEach((ball) => {
+            ball.x += ball.xSpeed * 0.8;
+            ball.y += ball.ySpeed * 0.8;
+
+            // 공이 화면 위쪽이나 아래쪽에 닿을 경우 방향 반전
+            if (ball.y + ball.radius >= HEIGHT || ball.y - ball.radius <= 0) {
+              ball.ySpeed = -ball.ySpeed;
+            }
+
+            // 공이 화면 왼쪽에 닿을 경우 플레이어 점수 증가 및 공 리셋
+            if (ball.x - ball.radius <= 0) {
+              playerScore++;
+              ball.x = WIDTH / 2;
+              ball.y = HEIGHT / 2;
+              ball.xSpeed = (Math.random() > 0.5 ? 1 : -1) * (8 + Math.random() * 4);
+              ball.ySpeed = (Math.random() > 0.5 ? 1 : -1) * (8 + Math.random() * 4);
+            }
+
+            // 공이 화면 오른쪽에 닿을 경우 상대방 점수 증가 및 공 리셋
+            if (ball.x + ball.radius >= WIDTH) {
+              opponentScore++;
+              ball.x = WIDTH / 2;
+              ball.y = HEIGHT / 2;
+              ball.xSpeed = (Math.random() > 0.5 ? 1 : -1) * (8 + Math.random() * 4);
+              ball.ySpeed = (Math.random() > 0.5 ? 1 : -1) * (8 + Math.random() * 4);
+            }
+
+            // 공이 플레이어 패들에 닿으면 방향 반전
+            if (
+              ball.x + ball.radius >= player.x &&
+              ball.y >= player.y &&
+              ball.y <= player.y + player.height
+            ) {
+              ball.xSpeed = -ball.xSpeed;
+            }
+
+            // 공이 상대방 패들에 닿으면 방향 반전
+            if (
+              ball.x - ball.radius <= opponent.x + opponent.width &&
+              ball.y >= opponent.y &&
+              ball.y <= opponent.y + opponent.height
+            ) {
+              ball.xSpeed = -ball.xSpeed;
+            }
+          });
+
+          // 상대방 패들 AI 동작 (가장 가까운 공의 위치에 따라 이동)
+          const nearestBall = balls.reduce((nearest, current) => {
+            return Math.abs(current.x - opponent.x) < Math.abs(nearest.x - opponent.x) ? current : nearest;
+          }, balls[0]);
+
+          if (opponent.y + opponent.height / 2 < nearestBall.y) {
+            opponent.y += opponent.speed;
+          } else if (opponent.y + opponent.height / 2 > nearestBall.y) {
+            opponent.y -= opponent.speed;
+          }
+
+          // 화면 그리기
+          ctx.fillStyle = 'black';
+          ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+          // 플레이어 패들, 상대방 패들 그리기
+          ctx.fillStyle = 'white';
+          ctx.fillRect(player.x, player.y, player.width, player.height);
+          ctx.fillRect(opponent.x, opponent.y, opponent.width, opponent.height);
+
+          // 공 그리기
+          balls.forEach((ball) => {
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+            ctx.fill();
+          });
+
+          // 점수 표시
+          ctx.fillText(playerScore, WIDTH / 2 + 50, 50);
+          ctx.fillText(opponentScore, WIDTH / 2 - 50, 50);
+
+          // 게임 오버 메시지 표시
+          if (playerScore === 10 || opponentScore === 10) {
+            ctx.fillText('Game over!', WIDTH / 2, HEIGHT / 2);
+            document.addEventListener('keydown', resetGame, { once: true });
+            return;
+          }
+
+          requestAnimationFrame(gameLoop);
+        }
+
+        // 게임 루프 시작
+        requestAnimationFrame(gameLoop);
+    </script>
+</body>
+</html>

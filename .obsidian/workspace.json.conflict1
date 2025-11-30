@@ -1,0 +1,252 @@
+{
+  "main": {
+    "id": "3866a408bc5339b6",
+    "type": "split",
+    "children": [
+      {
+        "id": "ee71c90469a1b894",
+        "type": "tabs",
+        "dimension": 48.29424307036247,
+        "children": [
+          {
+            "id": "0dcf5e510ee2be02",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "1_Project/4-1 학부/회귀분석/학습자료/Lecture_10_Diagnostic_in_multiple_linear_regression_ver2_class.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Lecture_10_Diagnostic_in_multiple_linear_regression_ver2_class"
+            }
+          }
+        ]
+      },
+      {
+        "id": "e7fc4fc94665a37a",
+        "type": "tabs",
+        "dimension": 51.70575692963753,
+        "children": [
+          {
+            "id": "657fa1a7b0c2aaed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1_Project/4-1 학부/계량경제학/계량중간/10. R-square.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10. R-square"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6516938d6e2b2959",
+    "type": "split",
+    "children": [
+      {
+        "id": "4c5eaf43a2211984",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "789ec9c8522fca1b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "2be58d850ffa37a6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
+            }
+          },
+          {
+            "id": "7e13ddbb3a4e51e8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "북마크"
+            }
+          },
+          {
+            "id": "aa87af351d912b81",
+            "type": "leaf",
+            "state": {
+              "type": "VIEW_TYPE_LONGFORM_EXPLORER",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "VIEW_TYPE_LONGFORM_EXPLORER"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 319.5
+  },
+  "right": {
+    "id": "5e1b65ea1f59b226",
+    "type": "split",
+    "children": [
+      {
+        "id": "c3f765fa980cf0ac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e8bd8a8c664e1129",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "1_Project/4-1 학부/회귀분석/학습자료/Lecture_3_simple_linear_regression_ver2_class.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Lecture_3_simple_linear_regression_ver2_class 의 백링크"
+            }
+          },
+          {
+            "id": "e49a425a2519f13e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "1_Project/4-1 학부/계량경제학/1. 모집단과 표본.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "1. 모집단과 표본 의 나가는 링크"
+            }
+          },
+          {
+            "id": "6a0ddaeed956e6d8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "태그"
+            }
+          },
+          {
+            "id": "3e7cb890d96d6640",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "1_Project/4-1 학부/계량경제학/1. 모집단과 표본.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "1. 모집단과 표본 의 개요"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "templater-obsidian:Templater": false,
+      "switcher:빠른 전환기 열기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "bases:새 베이스 생성하기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false
+    }
+  },
+  "active": "657fa1a7b0c2aaed",
+  "lastOpenFiles": [
+    "1_Project/4-1 학부/계량경제학/계량중간/10. 어쩌구.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/10. R-square.md",
+    "1_Project/4-1 학부/회귀분석/회귀중간/10. Diagnostics in multiple linear regression.md",
+    "Pasted image 20251029234147.png",
+    "1_Project/4-1 학부/회귀분석/학습자료/Lecture_10_Diagnostic_in_multiple_linear_regression_ver2_class.pdf",
+    "Pasted image 20251029233212.png",
+    "1_Project/4-1 학부/회귀분석/학습자료/Lecture_9_Multiple_linear_regression_IV_ver2_class.pdf",
+    "1_Project/4-1 학부/회귀분석/회귀중간/9. Multiple regression 3.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/11. Topics.md",
+    "1_Project/4-1 학부/회귀분석/회귀중간/최종 인출 노트 (중간).md",
+    "1_Project/4-1 학부/회귀분석/회귀중간/7. Multiple regression Ⅱ.md",
+    "1_Project/4-1 학부/계량경제학/학습자료/계량경제학 강의 11_Topics_천소라1028.pdf",
+    "1_Project/4-1 학부/계량경제학/학습자료/계량경제학 강의 10_R square_천소라1028.pdf",
+    "1_Project/4-1 학부/계량경제학/계량중간/3. 확률 분포 이론.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/7. 다중회귀모형 1.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/6. 단순회귀모형 II.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/8. 다중회귀모형 2.md",
+    "1_Project/4-1 학부/계량경제학/계량중간/8. 다중회귀분석 2.md",
+    "1_Project/4-1 학부/계량경제학/학습자료/계량경제학 강의 4_확률분포이론 (2)_천소라.pdf",
+    "1_Project/4-1 학부/계량경제학/학습자료/계량경제학 강의 9_다중회귀모형_천소라.pdf",
+    "1_Project/4-1 학부/계량경제학/학습자료/계량경제학 강의 9_다중회귀모형_천소라1016수업후.pdf",
+    "1_Project/4-1 학부/회귀분석/회귀중간/3. Simple regression Ⅰ.md",
+    "1_Project/4-1 학부/회귀분석/회귀중간/추가필기.md",
+    "1_Project/4-1 학부/회귀분석/회귀중간/3. Simple regressionⅠ.md",
+    "1_Project/4-1 학부/회귀분석/회귀중간/(old)3-2. Simple linear regression Ⅱ(Estimation).md",
+    "1_Project/4-1 학부/회귀분석/회귀중간/(old)3-1. Simple linear regression Ⅰ.md",
+    "1_Project/4-1 학부/계량경제학/학습자료/계량경제학 강의10_R square_1016수업후2.pdf",
+    "1_Project/4-1 학부/회귀분석/학습자료/Lecture_8_Multiple_linear_regression_III_ver2_class.pdf",
+    "1_Project/4-1 학부/전산통계/1_요약 및 정리/2. kNN.md",
+    "1_Project/4-1 학부/회귀분석/기타/Pasted image 20251017133808 1.png",
+    "1_Project/4-1 학부/회귀분석/기타/Pasted image 20251018235212.png",
+    "1_Project/4-1 학부/회귀분석/기타/Pasted image 20251018203314.png",
+    "1_Project/4-1 학부/회귀분석/기타/Pasted image 20251018222723.png",
+    "1_Project/4-1 학부/회귀분석/기타/Pasted image 20251015184841 1.png",
+    "1_Project/4-1 학부/전산통계/3_기타/CEF.png",
+    "1_Project/4-1 학부/전산통계/3_기타/Pasted image 20251013144716.png",
+    "1_Project/4-1 학부/전산통계/3_기타/Pasted image 20251013144848.png",
+    "1_Project/4-1 학부/전산통계/2_학습자료/ML/4_Regression.pdf",
+    "1_Project/4-1 학부/전산통계/1_요약 및 정리/4. Regression.md",
+    "1_Project/4-1 학부/전산통계/1_요약 및 정리/3. Naive Bayes.md",
+    "1_Project/4-1 학부/전산통계/1_요약 및 정리/1. 빅데이터 스몰데이터.md",
+    "1_Project/4-1 학부/선형대수학/선대중간/3. Matrix algebra.md",
+    "1_Project/4-1 학부/선형대수학/선대중간/4.1. Factorization and Rank.md",
+    "1_Project/4-1 학부/선형대수학/선대중간/4.2. Matrix transformations.md",
+    "1_Project/4-1 학부/선형대수학/선대중간/2.2. matrix.md",
+    "1_Project/4-1 학부/선형대수학/선대중간/6. Transformation 2 (advanced).md"
+  ]
+}
