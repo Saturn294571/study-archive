@@ -6,6 +6,24 @@
   "sessionStorage": "data",
   "sessions": [
     {
+      "start": "2025-12-05T03:33:04.085Z",
+      "total": 0,
+      "drafts": {
+        "1_Project/4-1 학부/회귀분석/회귀중간/필기/Index.md": {
+          "total": 0,
+          "scenes": {}
+        },
+        "1_Project/4-1 학부/계량경제학/계량중간/필기/Index.md": {
+          "total": 0,
+          "scenes": {
+            "1. 모집단과 표본": 0,
+            "2. 표본평균과 표본분산의 도출": 0,
+            "3. 확률 분포 이론": 0
+          }
+        }
+      }
+    },
+    {
       "start": "2025-12-03T23:59:54.736Z",
       "total": 0,
       "drafts": {
@@ -564,24 +582,6 @@
         "1_Project/4-1 학부/회귀분석/회귀중간/Index.md": {
           "total": 0,
           "scenes": {}
-        }
-      }
-    },
-    {
-      "start": "2025-09-29T06:30:36.354Z",
-      "total": 0,
-      "drafts": {
-        "1_Project/4-1 학부/회귀분석/회귀중간/Index.md": {
-          "total": 0,
-          "scenes": {}
-        },
-        "1_Project/4-1 학부/계량경제학/계량중간/Index.md": {
-          "total": 0,
-          "scenes": {
-            "1. 모집단과 표본": 0,
-            "2. 표본평균과 표본분산의 도출": 0,
-            "3. 확률 분포 이론": 0
-          }
         }
       }
     }

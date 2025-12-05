@@ -1,36 +1,9 @@
 ---
 marp: true
-theme: default
-width: 210mm
-height: 297mm
+theme: a4-light
 paginate: true
 math: mathjax
-style: |
-  section {
-    font-size: 14px;
-    padding: 40px;
-    text-align: left;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-  }
-  ul {
-    margin-bottom: 5px;
-  }
-  code {
-    background-color: #f0f0f0;
-    padding: 2px;
-    border-radius: 3px;
-  }
-  pre {
-    background-color: #f6f8fa;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
+
 ---
 
 # 선형대수학 기말고사 대비 백지 테스트 자료
