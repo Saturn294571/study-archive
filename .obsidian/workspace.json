@@ -31,12 +31,14 @@
             "id": "3af0f9dedb265f21",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "1_Project/4-1 학부/회귀분석/회귀기말/학습자료/Lecture_12_Interactions_and_qualitative_variables_ver2_class.pdf"
+                "file": "1_Project/4-1 학부/회귀분석/회귀기말/reviewplan.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Lecture_12_Interactions_and_qualitative_variables_ver2_class"
+              "icon": "lucide-file",
+              "title": "reviewplan"
             }
           }
         ]
@@ -106,8 +108,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "84b35b5e8f43c9a7",
@@ -202,9 +203,11 @@
   },
   "active": "3af0f9dedb265f21",
   "lastOpenFiles": [
-    "1_Project/4-1 학부/회귀분석/회귀기말/필기/Regression Exam Study Plan.md",
-    "1_Project/4-1 학부/회귀분석/회귀기말/필기/회귀기말final.pdf",
     "1_Project/4-1 학부/회귀분석/회귀기말/blackboard.md",
+    "1_Project/4-1 학부/회귀분석/회귀기말/필기/회귀기말총정리.pdf",
+    "1_Project/4-1 학부/회귀분석/회귀기말/필기/Regression Exam Study Plan.md",
+    "1_Project/4-1 학부/회귀분석/회귀기말/학습자료/Lecture_12_Interactions_and_qualitative_variables_ver2_class.pdf",
+    "1_Project/4-1 학부/회귀분석/회귀기말/필기/회귀기말final.pdf",
     "1_Project/4-1 학부/회귀분석/회귀기말/reviewplan.md",
     "1_Project/4-1 학부/회귀분석/회귀기말/필기/회귀기말final.md",
     "1_Project/4-1 학부/회귀분석/회귀기말/학습자료/Lecture_16_Penalized_regression_ver2_class.pdf",
@@ -212,7 +215,6 @@
     "1_Project/4-1 학부/회귀분석/회귀기말/필기/15. Selection.md",
     "1_Project/4-1 학부/회귀분석/회귀기말/필기/translate.md",
     "1_Project/4-1 학부/회귀분석/회귀기말/학습자료/Lecture_15_Selection_ver3_class.pdf",
-    "1_Project/4-1 학부/회귀분석/회귀기말/학습자료/Lecture_12_Interactions_and_qualitative_variables_ver2_class.pdf",
     "1_Project/4-1 학부/회귀분석/회귀기말/학습자료/Lecture_14_Correlated_Errors_ver2_class-1.pdf",
     "1_Project/4-1 학부/회귀분석/회귀기말/필기/16. Penalized Regression.md",
     "1_Project/4-1 학부/회귀분석/회귀기말/필기/14. Correlated Errors.md",
@@ -229,7 +231,6 @@
     "1_Project/4-1 학부/선형대수학/선대기말/필기/total.pdf",
     "1_Project/4-1 학부/전산통계/2_학습자료/ML/7_Neural Network.pdf",
     "1_Project/4-1 학부/계량경제학/계량기말/필기/13. 자기상관 & 구조적 변화.md",
-    "1_Project/4-1 학부/계량경제학/계량기말/학습자료/계량경제학 강의 14_내생성_천소라1127.pdf",
     "1_Project/4-1 학부/계량경제학/계량기말/음성/계량 14-1 음성.md",
     "1_Project/4-1 학부/계량경제학/계량기말/음성/계량 13-2 음성.md",
     "1_Project/4-1 학부/계량경제학/계량기말/음성/계량 13-1 음성.md",
@@ -240,7 +241,6 @@
     "1_Project/4-1 학부/계량경제학/계량기말/음성/계량 9-2 음성.md",
     "1_Project/4-1 학부/계량경제학/계량기말/음성/계량 9-1 음성.md",
     "1_Project/4-1 학부/계량경제학/계량기말/필기/12. 이분산성.md",
-    "1_Project/4-1 학부/선형대수학/선대기말/필기/10. Determinants.md",
     "Pasted image 20251202153825.png",
     "Pasted image 20251202153217.png",
     "Pasted image 20251202152353.png",

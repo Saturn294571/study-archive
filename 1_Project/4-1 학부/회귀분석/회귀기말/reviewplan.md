@@ -1,55 +1,40 @@
 # 회귀분석 기말고사 초단기 완성 전략 (D-1)
 
 **목표:** 12월 7일(토) 자정까지 전 범위(Ch 9~16, Ch 13 제외) 1회독 및 핵심 유형 마스터
-**전략:** "선택과 집중" - 교수님 강조 사항(계산 문제, 정의 등) 위주로 공략
+**전략:** "선택과 집중"
+## 📅 타임라인 (Time-Blocked Schedule) - D-Day (12/7 일)
 
----
+### 1. [오전: 이론 압축 및 암기] (07:00 ~ 12:00)
+*   **전략**: 정의(Definition)와 성질(Properties) 위주로 암기하여 서술형 60점 확보.
+*   **Ch 10~11 (Diagnostics & Leverage)**:
+    *   [x] **Hat Matrix ($H$)**: $h_{ii}$ (Leverage) 정의 및 성질. (Ch 11 핵심)
+    *   [x] **Influence Measures**: Cook's D, DFFITS, DFBETAS 정의 및 차이점(모델 전체 vs 예측값 vs 계수).
+*   **Ch 14 (Autocorrelation)**:
+    *   [x] **AR(1) Model**: $\epsilon_t = \rho \epsilon_{t-1} + w_t$ 식 이해.
+    *   [x] **Durbin-Watson**: $d \approx 2(1-\hat{\rho})$ 식과 판정 기준($d<2$ 양의상관).
+*   **Ch 16 (Multicollinearity)**:
+    *   [x] **VIF (분산팽창지수)**: $1/(1-R_j^2)$ 식과 기준($>10$) 암기.
+    *   *Note: PCR, SVD 이후 심화 내용은 제외.*
 
-## 📅 타임라인 (Time-Blocked Schedule)
+### 2. [오후: 계산형 문제 집중 공략] (13:00 ~ 17:00)
+*   **전략**: **기출/과제 $\to$ 음성강의(14-2) $\to$ 실전 모의고사** 순서로 60점 완벽 확보.
+*   **Step 1: 기출 풀이**:
+    *   [ ] `기말 계산관련 출제문제.pdf` (Q5, Q6 유형) 직접 풀기.
+    *   [ ] `HW2_2025-1.pdf` 풀고 템플릿 체화.
+*   **Step 2: 개념 점검**:
+    *   [ ] `회귀분석/음성/회귀14-1음성.txt` (기말 범위 및 출제 포인트 가이드 청취).
+*   **Step 3: 실전 모의고사**:
+    *   [ ] **AI 생성 유사 문제 3세트** 풀기 (F-test 변형, 더미 해석 심화).
+    *   *Action:* 기출 다 풀면 AI에게 "유사 문제 내줘" 요청하기.
 
-### 1. 오늘 밤: 기초 및 진단 (12/6 금 22:00 ~ 12/7 토 02:00)
-*   **목표:** F-검정의 논리 이해 및 모형 진단 지표 암기
-*   **Chapter 9 (Multiple Regression 3)**:
-    *   [ ] **F-test (Reduced vs Full Model)**: 가설($H_0$) 설정에 따른 Reduced Model 식 세우기. 자유도($df_R - df_F$) 계산 확실히.
-    *   [ ] **일반 선형 가설 (General Linear Hypothesis)**: $C\beta = h$ 행렬 표현법 익히기. (시험 출제 포인트)
-*   **Chapter 10 (Diagnostics)**:
-    *   [ ] **Studentized Residuals**: 내적(Internal) vs 외적(External/R-student) 차이점 (분모에 $s$냐 $s_{(i)}$냐).
-    *   [ ] **영향점 진단**: Cook's D, DFFITS, DFBETAS 식의 구성 요소(크기 vs 영향력)와 기준값 대략적 이해.
-    *   *Tip: 잔차 그림(Residual Plot)과 다중비교는 제외됨.*
+### 3. [저녁: 편향-분산 & 파이널 인출] (18:00 ~ 22:00)
+*   **Ch 16 (Penalized Regression)**:
+    *   [ ] **Bias-Variance Tradeoff**: $MSE = Var + Bias^2$ 분해 식 쓰고 의미 설명.
+    *   [ ] **Ridge vs Lasso**: 제약식($L_2$ vs $L_1$) 차이 및 축소추정량의 목적.
+*   **Final 백지 테스트**:
+    *   `blackboard.md`의 핵심 질문들에 대해 막힘없이 답할 수 있는지 최종 점검.
+    *   계산 공식(F, VIF, AIC, Adjusted $R^2$) 최종 암기 확인.
 
-### 2. 내일 오전: 계산 집중 공략 (12/7 토 09:00 ~ 12:00)
-*   **목표:** **Ch 12 계산 문제** 완벽 대비 (출제 가능성 매우 높음)
-*   **Chapter 11 (Leverage)**:
-    *   [ ] **Leverage($h_{ii}$)의 성질 ($1/n \le h_{ii} \le 1$, $\sum h_{ii} = p+1$ 등). Hat matrix 의미.
-*   **Chapter 12 (Qualitative Variables)**: **[★핵심 승부처]**
-    *   [ ] **Dummy Variable Coding**: 범주 수 $k$개면 변수는 $k-1$개 (Baseline 설정 주의).
-    *   [ ] **Interactions**: 기울기가 달라지는 모형 ($X \times D$) 해석.
-    *   [ ] **One-way ANOVA와 회귀 모형의 관계** 수식 연결.
-
-### 3. 내일 오후: 심화 주제 정리 (12/7 토 13:00 ~ 16:00)
-*   **목표:** 시계열 오차의 특성과 모형 선택 기준 암기
-*   **Chapter 14 (Correlated Errors)**:
-    *   [ ] **AR(1) Model**: $\rho$의 의미, 오차항의 분산/공분산 구조.
-    *   [ ] **Durbin-Watson 통계량**: $d \approx 2(1-\hat{\rho})$ 식과 범위(0~4) 해석 (2 근처=무상관).
-*   **Chapter 15 (Model Selection)**:
-    *   [ ] **Selection Criteria**: $R^2$ vs $Adj-R^2$, **Mallow's $C_p$** (값이 $p$ 근처여야 좋음), AIC/BIC 정의.
-    *   [ ] **Search Strategy**: Forward, Backward, Stepwise 절차의 차이.
-
-### 4. 내일 저녁: 개념 및 총정리 (12/7 토 17:00 ~ 20:00)
-*   **Chapter 16 (Penalized Regression)**:
-    *   [ ] **개념 위주**: Ridge ($L_2$) vs Lasso ($L_1$) 차이.
-    *   [ ] **Bias-Variance Tradeoff**: 람다($\lambda$)가 커질수록 Bias 증가, Variance 감소 그래프 이미지화.
-    *   *Tip: 심화 알고리즘(Elastic Net 등)은 제외됨.*
-
-### 5. 파이널 백지 복습 (12/7 토 21:00 ~ 24:00)
-*   **Action**: `회귀기말final.md`를 펴고 주요 키워드만 보고 수식/내용을 적을 수 있는지 테스트.
-*   **Checklist**:
-    1.  Full/Reduced Model F-통계량 식 적을 수 있는가?
-    2.  $C\beta=h$ 행렬 만들 수 있는가?
-    3.  Internal/External Studentized Residual 식 구별 가능한가?
-    4.  Dummy 변수 모델 해석 가능한가? (이 그룹의 평균은? 저 그룹의 기울기는?)
-    5.  Durbin-Watson 식과 판정 기준은?
-    6.  Ridge/Lasso의 목적함수 형태 차이는?
-
----
-> **마지막 팁:** 포기하지 말 것. 계산 문제는 Ch 12에서 나올 확률이 크니 예제(Salary, 힐 레이스 등)의 계수 해석을 꼼꼼히 볼 것.
+### 4. [밤: 최종 약점 보완] (22:00 ~ )
+*   기출/과제 문제 중 틀렸던 계산 문제 다시 풀어보기.
+*   Ch 13(전체) 및 Ch 11(그림), Ch 16(심화) 제외 확인.
