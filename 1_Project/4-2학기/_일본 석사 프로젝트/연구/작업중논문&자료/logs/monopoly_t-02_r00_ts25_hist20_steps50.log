@@ -1,0 +1,925 @@
+2026-01-20 05:11:36,443 - INFO - Main process started: monopoly_a1_w-LLM_p-LLM_llm-llama3.1:8b_prompt-io_ts25_hist20_steps50_bracket-three
+2026-01-20 05:11:36,443 - INFO - PID: 164505
+2026-01-20 05:11:36,443 - INFO - Namespace(num_agents=1, worker_type='LLM', planner_type='LLM', max_timesteps=50, history_len=20, two_timescale=25, debug=True, llm='llama3.1:8b', prompt_algo='io', scenario='monopoly', percent_ego=100, percent_alt=0, percent_adv=0, port=11434, seed=42, agent_mix='us_income', platforms=False, name='monopoly_a1_w-LLM_p-LLM_llm-llama3.1:8b_prompt-io_ts25_hist20_steps50_bracket-three', log_dir='logs', bracket_setting='three', service='ollama', use_multithreading=False, warmup=0, elasticity=[0.4], alpha=0.33, capital=1.0, productivity=1.0, rho=0.0, tau=-0.2, wage=1.0, demand_a=10.0, demand_b=0.1, wandb=False, timeout=30)
+2026-01-20 05:11:36,616 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:11:36,616 - INFO - Ollama Token Usage - Prompt: 22, Completion: 2
+2026-01-20 05:11:36,616 - INFO - Successfully connected to LLM: llama3.1:8b
+2026-01-20 05:11:36,628 - INFO - [WORKER INIT] name=worker_0 role=default utility_type=egotistical
+2026-01-20 05:11:36,628 - INFO - TIMESTEP 0
+2026-01-20 05:11:36,629 - INFO - [running avg worker_0] nan nan
+2026-01-20 05:11:45,113 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:11:45,114 - INFO - Ollama Token Usage - Prompt: 465, Completion: 668
+2026-01-20 05:11:45,114 - INFO - LLM OUTPUT RECURSE 0	To maximize profit, we need to find the optimal labor level that balances production costs with revenue from sales.
+
+First, let's calculate the marginal product of labor (MPL) using the given production function:
+
+Q = A(rho) * K0^0.33 * L^0.6699999999999999
+
+Given: A(rho) = A0*(1+rho) with A0=1.0 and rho=0.0, so A(rho)=A0=1.0.
+
+Q = 1.0 * (1.0)^0.33 * L^0.6699999999999999
+Q ≈ L^0.67
+
+Now, let's find the inverse demand function:
+
+P(Q) = a - bQ
+with a=10.0 and b=0.1:
+
+P(Q) = 10.0 - 0.1*Q
+
+Next, we calculate revenue (R), which is P*Q:
+
+R = P(Q)*Q ≈ (10.0 - 0.1*Q)*Q
+R ≈ 10.0*Q - 0.1*Q^2
+
+Now, let's calculate the profit function, which includes production costs and output tax:
+
+pi = R - w*L - tau*Q
+= (10.0*Q - 0.1*Q^2) - 1.0*L + 0.2*Q
+
+Substituting Q ≈ L^0.67 from earlier:
+
+pi ≈ (10.0*L^0.67 - 0.1*(L^0.67)^2) - 1.0*L + 0.2*L^0.67
+
+To find the maximum profit, we need to take the derivative of pi with respect to L and set it equal to zero:
+
+d(pi)/d(L) ≈ (10.0*0.67*L^(-0.33) - 0.1*2*(L^0.67)*0.67*L^(-0.33)) - 1.0 + 0.2*0.67*L^(-0.33)
+
+Simplifying and setting the derivative equal to zero:
+
+(10.0*0.67*L^(-0.33) - 0.2*(L^0.67)*0.67*L^(-0.33)) - 1.0 + 0.2*0.67*L^(-0.33) = 0
+
+Combine like terms and solve for L:
+
+(6.9/L^0.33 - 0.1344*(L^0.67)/L^0.33) - 1.0 + 0.1344/L^0.33 = 0
+(6.9 - 0.1344*L^0.67) - L^0.33 = 0
+
+Rearranging and solving for L:
+
+L ≈ (6.9 / 0.1344)^{1/0.67}
+L ≈ 41.31 hours
+
+So, the optimal labor level to maximize profit is approximately 41.31 hours.
+
+JSON answer: {"LABOR": "41"}
+2026-01-20 05:11:45,285 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:11:45,285 - INFO - Ollama Token Usage - Prompt: 465, Completion: 8
+2026-01-20 05:11:45,285 - INFO - LLM OUTPUT RECURSE 1	{"LABOR": 46}
+2026-01-20 05:11:45,286 - INFO - [WORKER] worker_0 t=0:
+labor=46.0
+Q=13.003125292031003
+P=8.6996874707969
+profit=69.72375124269058
+surplus=75.57718955229723
+u=69.72375124269058
+2026-01-20 05:11:45,286 - INFO - Time for iteration 0-1: 8.65737 seconds
+2026-01-20 05:11:45,286 - INFO - FPS: 0.12
+2026-01-20 05:11:45,286 - INFO - APS: 0.12
+2026-01-20 05:11:45,286 - INFO - Time remaining 2-50: 424.21132 seconds
+2026-01-20 05:11:45,286 - INFO - TIMESTEP 1
+2026-01-20 05:11:45,286 - INFO - [running avg worker_0] 50.0 69.72375124269058
+2026-01-20 05:11:45,556 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:11:45,556 - INFO - Ollama Token Usage - Prompt: 764, Completion: 8
+2026-01-20 05:11:45,556 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": 55}
+2026-01-20 05:11:45,556 - INFO - worker_0 INCREASE labor > 55.0
+2026-01-20 05:11:45,556 - INFO - [WORKER] worker_0 t=1:
+labor=55.0
+Q=14.656929603486146
+P=8.534307039651384
+profit=73.01812341540382
+surplus=80.82801676478402
+u=73.01812341540382
+2026-01-20 05:11:45,556 - INFO - Time for iteration 0-2: 8.92781 seconds
+2026-01-20 05:11:45,556 - INFO - FPS: 0.22
+2026-01-20 05:11:45,556 - INFO - APS: 0.22
+2026-01-20 05:11:45,556 - INFO - Time remaining 3-50: 214.26747 seconds
+2026-01-20 05:11:45,556 - INFO - TIMESTEP 2
+2026-01-20 05:11:45,556 - INFO - [running avg worker_0] 50.0 71.3709373290472
+2026-01-20 05:11:46,795 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:11:46,795 - INFO - Ollama Token Usage - Prompt: 1106, Completion: 77
+2026-01-20 05:11:46,795 - INFO - LLM OUTPUT RECURSE 0	Based on the historical data, it appears that increasing labor has consistently increased utility (which is equal to profit in this case). Therefore, I will choose a higher value for labor than the average of 50 hours.
+
+I will select LABOR: 90.0 hours.
+
+This choice balances exploration and exploitation by being significantly above the average but still within the range of historical values.
+2026-01-20 05:11:48,800 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:11:48,800 - INFO - Ollama Token Usage - Prompt: 1106, Completion: 150
+2026-01-20 05:11:48,800 - INFO - LLM OUTPUT RECURSE 1	{"LABOR": "80"}
+2026-01-20 05:11:48,800 - INFO - worker_0 INCREASE labor > 80.0
+2026-01-20 05:11:48,800 - INFO - [WORKER] worker_0 t=2:
+labor=80.0
+Q=18.839539859028303
+P=8.116046014097169
+profit=76.67048035209704
+surplus=90.64898548528723
+u=76.67048035209704
+2026-01-20 05:11:48,800 - INFO - Time for iteration 0-3: 12.17223 seconds
+2026-01-20 05:11:48,800 - INFO - FPS: 0.25
+2026-01-20 05:11:48,800 - INFO - APS: 0.25
+2026-01-20 05:11:48,800 - INFO - Time remaining 4-50: 190.69825 seconds
+2026-01-20 05:11:48,800 - INFO - TIMESTEP 3
+2026-01-20 05:11:48,801 - INFO - [running avg worker_0] 60.0 73.13745167006381
+2026-01-20 05:11:50,766 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:11:50,766 - INFO - Ollama Token Usage - Prompt: 1448, Completion: 128
+2026-01-20 05:11:50,767 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": 75}
+2026-01-20 05:11:50,767 - INFO - worker_0 INCREASE labor > 75.0
+2026-01-20 05:11:50,767 - INFO - [WORKER] worker_0 t=3:
+labor=75.0
+Q=18.04226454880643
+P=8.195773545119357
+profit=76.47876739291384
+surplus=89.14647998560844
+u=76.47876739291384
+2026-01-20 05:11:50,767 - INFO - Time for iteration 0-4: 14.13844 seconds
+2026-01-20 05:11:50,767 - INFO - FPS: 0.28
+2026-01-20 05:11:50,767 - INFO - APS: 0.28
+2026-01-20 05:11:50,767 - INFO - Time remaining 5-50: 162.59209 seconds
+2026-01-20 05:11:50,767 - INFO - TIMESTEP 4
+2026-01-20 05:11:50,767 - INFO - [running avg worker_0] 60.0 73.97278060077632
+2026-01-20 05:11:53,332 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:11:53,332 - INFO - Ollama Token Usage - Prompt: 1792, Completion: 171
+2026-01-20 05:11:53,332 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": 85}
+2026-01-20 05:11:53,332 - INFO - worker_0 INCREASE labor > 85.0
+2026-01-20 05:11:53,332 - INFO - [WORKER] worker_0 t=4:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:11:53,332 - INFO - Time for iteration 0-5: 16.70430 seconds
+2026-01-20 05:11:53,332 - INFO - FPS: 0.30
+2026-01-20 05:11:53,333 - INFO - APS: 0.30
+2026-01-20 05:11:53,333 - INFO - Time remaining 6-50: 150.33869 seconds
+2026-01-20 05:11:53,333 - INFO - TIMESTEP 5
+2026-01-20 05:11:53,333 - INFO - [running avg worker_0] 70.0 74.50479864826848
+2026-01-20 05:11:56,138 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:11:56,139 - INFO - Ollama Token Usage - Prompt: 2065, Completion: 190
+2026-01-20 05:11:56,139 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "80"}
+2026-01-20 05:11:56,139 - INFO - worker_0 DECREASE labor < 80.0
+2026-01-20 05:11:56,139 - INFO - [WORKER] worker_0 t=5:
+labor=80.0
+Q=18.839539859028303
+P=8.116046014097169
+profit=76.67048035209704
+surplus=90.64898548528723
+u=76.67048035209704
+2026-01-20 05:11:56,139 - INFO - Time for iteration 0-6: 19.51066 seconds
+2026-01-20 05:11:56,139 - INFO - FPS: 0.31
+2026-01-20 05:11:56,139 - INFO - APS: 0.31
+2026-01-20 05:11:56,139 - INFO - Time remaining 7-50: 143.07817 seconds
+2026-01-20 05:11:56,139 - INFO - TIMESTEP 6
+2026-01-20 05:11:56,139 - INFO - [running avg worker_0] 70.0 74.86574559890657
+2026-01-20 05:11:59,310 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:11:59,310 - INFO - Ollama Token Usage - Prompt: 2236, Completion: 221
+2026-01-20 05:11:59,310 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "82"}
+2026-01-20 05:11:59,310 - INFO - worker_0 INCREASE labor > 82.0
+2026-01-20 05:11:59,310 - INFO - [WORKER] worker_0 t=6:
+labor=82.0
+Q=19.153814677664766
+P=8.084618532233524
+profit=76.682048041548
+surplus=91.19471594133137
+u=76.682048041548
+2026-01-20 05:11:59,310 - INFO - Time for iteration 0-7: 22.68227 seconds
+2026-01-20 05:11:59,310 - INFO - FPS: 0.31
+2026-01-20 05:11:59,310 - INFO - APS: 0.31
+2026-01-20 05:11:59,311 - INFO - Time remaining 8-50: 139.33392 seconds
+2026-01-20 05:11:59,311 - INFO - TIMESTEP 7
+2026-01-20 05:11:59,311 - INFO - [running avg worker_0] 70.0 75.12521737642679
+2026-01-20 05:12:00,548 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:00,549 - INFO - Ollama Token Usage - Prompt: 2427, Completion: 69
+2026-01-20 05:12:00,549 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": 90}
+2026-01-20 05:12:00,549 - INFO - worker_0 DECREASE labor < 90.0
+2026-01-20 05:12:00,549 - INFO - [WORKER] worker_0 t=7:
+labor=90.0
+Q=20.38649107152843
+P=7.9613508928471575
+profit=76.38130710863915
+surplus=93.08445980480886
+u=76.38130710863915
+2026-01-20 05:12:00,549 - INFO - Time for iteration 0-8: 23.92069 seconds
+2026-01-20 05:12:00,549 - INFO - FPS: 0.33
+2026-01-20 05:12:00,549 - INFO - APS: 0.33
+2026-01-20 05:12:00,549 - INFO - Time remaining 9-50: 125.58364 seconds
+2026-01-20 05:12:00,549 - INFO - TIMESTEP 8
+2026-01-20 05:12:00,549 - INFO - [running avg worker_0] 70.0 75.28222859295332
+2026-01-20 05:12:02,369 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:02,370 - INFO - Ollama Token Usage - Prompt: 2599, Completion: 110
+2026-01-20 05:12:02,370 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": 85}
+2026-01-20 05:12:02,370 - INFO - worker_0 DECREASE labor < 85.0
+2026-01-20 05:12:02,370 - INFO - [WORKER] worker_0 t=8:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:12:02,370 - INFO - Time for iteration 0-9: 25.74154 seconds
+2026-01-20 05:12:02,370 - INFO - FPS: 0.35
+2026-01-20 05:12:02,370 - INFO - APS: 0.35
+2026-01-20 05:12:02,370 - INFO - Time remaining 10-50: 117.26704 seconds
+2026-01-20 05:12:02,370 - INFO - TIMESTEP 9
+2026-01-20 05:12:02,370 - INFO - [running avg worker_0] 80.0 75.4322999535404
+2026-01-20 05:12:03,736 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:03,736 - INFO - Ollama Token Usage - Prompt: 2770, Completion: 76
+2026-01-20 05:12:03,736 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "82"}
+2026-01-20 05:12:03,736 - INFO - worker_0 DECREASE labor < 82.0
+2026-01-20 05:12:03,736 - INFO - [WORKER] worker_0 t=9:
+labor=82.0
+Q=19.153814677664766
+P=8.084618532233524
+profit=76.682048041548
+surplus=91.19471594133137
+u=76.682048041548
+2026-01-20 05:12:03,736 - INFO - Time for iteration 0-10: 27.10791 seconds
+2026-01-20 05:12:03,736 - INFO - FPS: 0.37
+2026-01-20 05:12:03,736 - INFO - APS: 0.37
+2026-01-20 05:12:03,736 - INFO - Time remaining 11-50: 108.43162 seconds
+2026-01-20 05:12:03,736 - INFO - TIMESTEP 10
+2026-01-20 05:12:03,736 - INFO - [running avg worker_0] 80.0 75.55727476234117
+2026-01-20 05:12:05,008 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:05,008 - INFO - Ollama Token Usage - Prompt: 2939, Completion: 71
+2026-01-20 05:12:05,008 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": 87}
+2026-01-20 05:12:05,008 - INFO - worker_0 DECREASE labor < 87.0
+2026-01-20 05:12:05,008 - INFO - [WORKER] worker_0 t=10:
+labor=87.0
+Q=19.928650889772516
+P=8.007134911022748
+profit=76.55712644703658
+surplus=92.4289525834036
+u=76.55712644703658
+2026-01-20 05:12:05,008 - INFO - Time for iteration 0-11: 28.38029 seconds
+2026-01-20 05:12:05,008 - INFO - FPS: 0.39
+2026-01-20 05:12:05,009 - INFO - APS: 0.39
+2026-01-20 05:12:05,009 - INFO - Time remaining 12-50: 100.62105 seconds
+2026-01-20 05:12:05,009 - INFO - TIMESTEP 11
+2026-01-20 05:12:05,009 - INFO - [running avg worker_0] 80.0 75.64817037004075
+2026-01-20 05:12:06,536 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:06,536 - INFO - Ollama Token Usage - Prompt: 3108, Completion: 90
+2026-01-20 05:12:06,536 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "83"}
+2026-01-20 05:12:06,536 - INFO - worker_0 DECREASE labor < 83.0
+2026-01-20 05:12:06,536 - INFO - [WORKER] worker_0 t=11:
+labor=83.0
+Q=19.31000213922559
+P=8.068999786077441
+profit=76.67440355841131
+surplus=91.45621226141105
+u=76.67440355841131
+2026-01-20 05:12:06,536 - INFO - Time for iteration 0-12: 29.90802 seconds
+2026-01-20 05:12:06,536 - INFO - FPS: 0.40
+2026-01-20 05:12:06,536 - INFO - APS: 0.40
+2026-01-20 05:12:06,536 - INFO - Time remaining 13-50: 94.70872 seconds
+2026-01-20 05:12:06,536 - INFO - TIMESTEP 12
+2026-01-20 05:12:06,536 - INFO - [running avg worker_0] 80.0 75.73368980240495
+2026-01-20 05:12:08,478 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:08,479 - INFO - Ollama Token Usage - Prompt: 3279, Completion: 120
+2026-01-20 05:12:08,479 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "90"}
+2026-01-20 05:12:08,479 - INFO - worker_0 DECREASE labor < 90.0
+2026-01-20 05:12:08,479 - INFO - [WORKER] worker_0 t=12:
+labor=90.0
+Q=20.38649107152843
+P=7.9613508928471575
+profit=76.38130710863915
+surplus=93.08445980480886
+u=76.38130710863915
+2026-01-20 05:12:08,479 - INFO - Time for iteration 0-13: 31.85051 seconds
+2026-01-20 05:12:08,479 - INFO - FPS: 0.41
+2026-01-20 05:12:08,479 - INFO - APS: 0.41
+2026-01-20 05:12:08,479 - INFO - Time remaining 14-50: 90.65145 seconds
+2026-01-20 05:12:08,479 - INFO - TIMESTEP 13
+2026-01-20 05:12:08,479 - INFO - [running avg worker_0] 80.0 75.78350651826912
+2026-01-20 05:12:10,089 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:10,089 - INFO - Ollama Token Usage - Prompt: 3450, Completion: 95
+2026-01-20 05:12:10,089 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "88"}
+2026-01-20 05:12:10,089 - INFO - worker_0 DECREASE labor < 88.0
+2026-01-20 05:12:10,089 - INFO - [WORKER] worker_0 t=13:
+labor=88.0
+Q=20.08183481103041
+P=7.991816518896959
+profit=76.50670613475891
+surplus=92.65434364142845
+u=76.50670613475891
+2026-01-20 05:12:10,089 - INFO - Time for iteration 0-14: 33.46067 seconds
+2026-01-20 05:12:10,089 - INFO - FPS: 0.42
+2026-01-20 05:12:10,089 - INFO - APS: 0.42
+2026-01-20 05:12:10,089 - INFO - Time remaining 15-50: 86.04171 seconds
+2026-01-20 05:12:10,089 - INFO - TIMESTEP 14
+2026-01-20 05:12:10,089 - INFO - [running avg worker_0] 80.0 75.83516363373268
+2026-01-20 05:12:12,122 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:12,122 - INFO - Ollama Token Usage - Prompt: 3621, Completion: 127
+2026-01-20 05:12:12,123 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "88"}
+2026-01-20 05:12:12,123 - INFO - [WORKER] worker_0 t=14:
+labor=88.0
+Q=20.08183481103041
+P=7.991816518896959
+profit=76.50670613475891
+surplus=92.65434364142845
+u=76.50670613475891
+2026-01-20 05:12:12,123 - INFO - Time for iteration 0-15: 35.49444 seconds
+2026-01-20 05:12:12,123 - INFO - FPS: 0.42
+2026-01-20 05:12:12,123 - INFO - APS: 0.42
+2026-01-20 05:12:12,123 - INFO - Time remaining 16-50: 82.82037 seconds
+2026-01-20 05:12:12,123 - INFO - TIMESTEP 15
+2026-01-20 05:12:12,123 - INFO - [running avg worker_0] 80.0 75.87993313380109
+2026-01-20 05:12:13,322 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:13,323 - INFO - Ollama Token Usage - Prompt: 3766, Completion: 64
+2026-01-20 05:12:13,323 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": 90}
+2026-01-20 05:12:13,323 - INFO - worker_0 DECREASE labor < 90.0
+2026-01-20 05:12:13,323 - INFO - [WORKER] worker_0 t=15:
+labor=90.0
+Q=20.38649107152843
+P=7.9613508928471575
+profit=76.38130710863915
+surplus=93.08445980480886
+u=76.38130710863915
+2026-01-20 05:12:13,323 - INFO - Time for iteration 0-16: 36.69462 seconds
+2026-01-20 05:12:13,323 - INFO - FPS: 0.44
+2026-01-20 05:12:13,323 - INFO - APS: 0.44
+2026-01-20 05:12:13,323 - INFO - Time remaining 17-50: 77.97606 seconds
+2026-01-20 05:12:13,323 - INFO - TIMESTEP 16
+2026-01-20 05:12:13,323 - INFO - [running avg worker_0] 80.0 75.91126900722848
+2026-01-20 05:12:15,191 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:15,192 - INFO - Ollama Token Usage - Prompt: 3937, Completion: 110
+2026-01-20 05:12:15,192 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "77"}
+2026-01-20 05:12:15,192 - INFO - worker_0 DECREASE labor < 77.0
+2026-01-20 05:12:15,192 - INFO - [WORKER] worker_0 t=16:
+labor=77.0
+Q=18.363217825124675
+P=8.163678217487533
+profit=76.58404492697403
+surplus=89.77178980659792
+u=76.58404492697403
+2026-01-20 05:12:15,192 - INFO - Time for iteration 0-17: 38.56363 seconds
+2026-01-20 05:12:15,192 - INFO - FPS: 0.44
+2026-01-20 05:12:15,192 - INFO - APS: 0.44
+2026-01-20 05:12:15,192 - INFO - Time remaining 18-50: 74.85881 seconds
+2026-01-20 05:12:15,192 - INFO - TIMESTEP 17
+2026-01-20 05:12:15,192 - INFO - [running avg worker_0] 80.0 75.95084406133117
+2026-01-20 05:12:20,270 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:20,271 - INFO - Ollama Token Usage - Prompt: 3918, Completion: 317
+2026-01-20 05:12:20,271 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:12:20,271 - INFO - worker_0 INCREASE labor > 85.0
+2026-01-20 05:12:20,271 - INFO - [WORKER] worker_0 t=17:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:12:20,271 - INFO - Time for iteration 0-18: 43.64253 seconds
+2026-01-20 05:12:20,271 - INFO - FPS: 0.41
+2026-01-20 05:12:20,271 - INFO - APS: 0.41
+2026-01-20 05:12:20,271 - INFO - Time remaining 19-50: 77.58672 seconds
+2026-01-20 05:12:20,271 - INFO - TIMESTEP 18
+2026-01-20 05:12:20,271 - INFO - [running avg worker_0] 80.0 75.98873443782594
+2026-01-20 05:12:22,640 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:22,640 - INFO - Ollama Token Usage - Prompt: 4088, Completion: 109
+2026-01-20 05:12:22,640 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:12:22,640 - INFO - [WORKER] worker_0 t=18:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:12:22,640 - INFO - Time for iteration 0-19: 46.01209 seconds
+2026-01-20 05:12:22,640 - INFO - FPS: 0.41
+2026-01-20 05:12:22,640 - INFO - APS: 0.41
+2026-01-20 05:12:22,640 - INFO - Time remaining 20-50: 75.07236 seconds
+2026-01-20 05:12:22,640 - INFO - TIMESTEP 19
+2026-01-20 05:12:22,640 - INFO - [running avg worker_0] 80.0 76.02263635363704
+2026-01-20 05:12:25,573 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:25,573 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 145
+2026-01-20 05:12:25,573 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:12:25,573 - INFO - [WORKER] worker_0 t=19:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:12:25,573 - INFO - Time for iteration 0-20: 48.94488 seconds
+2026-01-20 05:12:25,573 - INFO - FPS: 0.41
+2026-01-20 05:12:25,573 - INFO - APS: 0.41
+2026-01-20 05:12:25,573 - INFO - Time remaining 21-50: 73.41731 seconds
+2026-01-20 05:12:25,573 - INFO - TIMESTEP 20
+2026-01-20 05:12:25,573 - INFO - [running avg worker_0] 80.0 76.05314807786705
+2026-01-20 05:12:29,565 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:29,565 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 226
+2026-01-20 05:12:29,565 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": 85}
+2026-01-20 05:12:29,565 - INFO - [WORKER] worker_0 t=20:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:12:29,565 - INFO - Time for iteration 0-21: 52.93717 seconds
+2026-01-20 05:12:29,565 - INFO - FPS: 0.40
+2026-01-20 05:12:29,565 - INFO - APS: 0.40
+2026-01-20 05:12:29,565 - INFO - Time remaining 22-50: 73.10372 seconds
+2026-01-20 05:12:29,565 - INFO - TIMESTEP 21
+2026-01-20 05:12:29,566 - INFO - [running avg worker_0] 80.0 76.39860405764436
+2026-01-20 05:12:31,445 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:31,445 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 74
+2026-01-20 05:12:31,445 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "82"}
+2026-01-20 05:12:31,445 - INFO - worker_0 DECREASE labor < 82.0
+2026-01-20 05:12:31,445 - INFO - [WORKER] worker_0 t=21:
+labor=82.0
+Q=19.153814677664766
+P=8.084618532233524
+profit=76.682048041548
+surplus=91.19471594133137
+u=76.682048041548
+2026-01-20 05:12:31,445 - INFO - Time for iteration 0-22: 54.81704 seconds
+2026-01-20 05:12:31,445 - INFO - FPS: 0.40
+2026-01-20 05:12:31,445 - INFO - APS: 0.40
+2026-01-20 05:12:31,445 - INFO - Time remaining 23-50: 69.76714 seconds
+2026-01-20 05:12:31,445 - INFO - TIMESTEP 22
+2026-01-20 05:12:31,445 - INFO - [running avg worker_0] 80.0 76.58180028895158
+2026-01-20 05:12:32,951 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:32,951 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 44
+2026-01-20 05:12:32,951 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": 85}
+2026-01-20 05:12:32,951 - INFO - worker_0 DECREASE labor < 85.0
+2026-01-20 05:12:32,951 - INFO - [WORKER] worker_0 t=22:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:12:32,951 - INFO - Time for iteration 0-23: 56.32315 seconds
+2026-01-20 05:12:32,951 - INFO - FPS: 0.41
+2026-01-20 05:12:32,951 - INFO - APS: 0.41
+2026-01-20 05:12:32,951 - INFO - Time remaining 24-50: 66.11848 seconds
+2026-01-20 05:12:32,951 - INFO - TIMESTEP 23
+2026-01-20 05:12:32,952 - INFO - [running avg worker_0] 80.0 76.57991981325858
+2026-01-20 05:12:35,106 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:35,106 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 92
+2026-01-20 05:12:35,106 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:12:35,106 - INFO - [WORKER] worker_0 t=23:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:12:35,106 - INFO - Time for iteration 0-24: 58.47805 seconds
+2026-01-20 05:12:35,106 - INFO - FPS: 0.41
+2026-01-20 05:12:35,106 - INFO - APS: 0.41
+2026-01-20 05:12:35,106 - INFO - Time remaining 25-50: 63.35122 seconds
+2026-01-20 05:12:35,106 - INFO - TIMESTEP 24
+2026-01-20 05:12:35,106 - INFO - [running avg worker_0] 80.0 76.58762498552476
+2026-01-20 05:12:36,814 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:36,814 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 58
+2026-01-20 05:12:36,814 - INFO - LLM OUTPUT RECURSE 0	{
+  "LABOR": "83"
+}
+2026-01-20 05:12:36,814 - INFO - worker_0 DECREASE labor < 83.0
+2026-01-20 05:12:36,814 - INFO - [WORKER] worker_0 t=24:
+labor=83.0
+Q=19.31000213922559
+P=8.068999786077441
+profit=76.67440355841131
+surplus=91.45621226141105
+u=76.67440355841131
+2026-01-20 05:12:36,814 - INFO - Time for iteration 0-25: 60.18624 seconds
+2026-01-20 05:12:36,814 - INFO - FPS: 0.42
+2026-01-20 05:12:36,814 - INFO - APS: 0.42
+2026-01-20 05:12:36,814 - INFO - Time remaining 26-50: 60.18624 seconds
+2026-01-20 05:12:36,814 - INFO - TIMESTEP 25
+2026-01-20 05:12:36,815 - INFO - [running avg worker_0] 80.0 76.58970162153346
+2026-01-20 05:12:40,619 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:40,619 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 210
+2026-01-20 05:12:40,619 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "87"}
+2026-01-20 05:12:40,619 - INFO - worker_0 DECREASE labor < 87.0
+2026-01-20 05:12:40,619 - INFO - [WORKER] worker_0 t=25:
+labor=87.0
+Q=19.928650889772516
+P=8.007134911022748
+profit=76.55712644703658
+surplus=92.4289525834036
+u=76.55712644703658
+2026-01-20 05:12:40,619 - INFO - Time for iteration 0-26: 63.99087 seconds
+2026-01-20 05:12:40,619 - INFO - FPS: 0.41
+2026-01-20 05:12:40,619 - INFO - APS: 0.41
+2026-01-20 05:12:40,619 - INFO - Time remaining 27-50: 59.06849 seconds
+2026-01-20 05:12:40,619 - INFO - TIMESTEP 26
+2026-01-20 05:12:40,619 - INFO - [running avg worker_0] 90.0 76.58403392628044
+2026-01-20 05:12:44,642 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:44,642 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 234
+2026-01-20 05:12:44,642 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "80"}
+2026-01-20 05:12:44,642 - INFO - worker_0 DECREASE labor < 80.0
+2026-01-20 05:12:44,642 - INFO - [WORKER] worker_0 t=26:
+labor=80.0
+Q=18.839539859028303
+P=8.116046014097169
+profit=76.67048035209704
+surplus=90.64898548528723
+u=76.67048035209704
+2026-01-20 05:12:44,642 - INFO - Time for iteration 0-27: 68.01426 seconds
+2026-01-20 05:12:44,642 - INFO - FPS: 0.40
+2026-01-20 05:12:44,642 - INFO - APS: 0.40
+2026-01-20 05:12:44,642 - INFO - Time remaining 28-50: 57.93807 seconds
+2026-01-20 05:12:44,642 - INFO - TIMESTEP 27
+2026-01-20 05:12:44,643 - INFO - [running avg worker_0] 90.0 76.5834555418079
+2026-01-20 05:12:49,197 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:49,197 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 267
+2026-01-20 05:12:49,197 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:12:49,197 - INFO - worker_0 DECREASE labor < 85.0
+2026-01-20 05:12:49,197 - INFO - [WORKER] worker_0 t=27:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:12:49,197 - INFO - Time for iteration 0-28: 72.56895 seconds
+2026-01-20 05:12:49,197 - INFO - FPS: 0.39
+2026-01-20 05:12:49,197 - INFO - APS: 0.39
+2026-01-20 05:12:49,197 - INFO - Time remaining 29-50: 57.01846 seconds
+2026-01-20 05:12:49,197 - INFO - TIMESTEP 28
+2026-01-20 05:12:49,197 - INFO - [running avg worker_0] 80.0 76.59603372828778
+2026-01-20 05:12:52,105 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:52,105 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 144
+2026-01-20 05:12:52,105 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "82"}
+2026-01-20 05:12:52,105 - INFO - worker_0 DECREASE labor < 82.0
+2026-01-20 05:12:52,105 - INFO - [WORKER] worker_0 t=28:
+labor=82.0
+Q=19.153814677664766
+P=8.084618532233524
+profit=76.682048041548
+surplus=91.19471594133137
+u=76.682048041548
+2026-01-20 05:12:52,105 - INFO - Time for iteration 0-29: 75.47695 seconds
+2026-01-20 05:12:52,105 - INFO - FPS: 0.38
+2026-01-20 05:12:52,105 - INFO - APS: 0.38
+2026-01-20 05:12:52,105 - INFO - Time remaining 30-50: 54.65572 seconds
+2026-01-20 05:12:52,105 - INFO - TIMESTEP 29
+2026-01-20 05:12:52,105 - INFO - [running avg worker_0] 80.0 76.59849258845334
+2026-01-20 05:12:56,369 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:56,369 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 250
+2026-01-20 05:12:56,369 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:12:56,369 - INFO - worker_0 DECREASE labor < 85.0
+2026-01-20 05:12:56,369 - INFO - [WORKER] worker_0 t=29:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:12:56,369 - INFO - Time for iteration 0-30: 79.74122 seconds
+2026-01-20 05:12:56,369 - INFO - FPS: 0.38
+2026-01-20 05:12:56,369 - INFO - APS: 0.38
+2026-01-20 05:12:56,369 - INFO - Time remaining 31-50: 53.16081 seconds
+2026-01-20 05:12:56,369 - INFO - TIMESTEP 30
+2026-01-20 05:12:56,370 - INFO - [running avg worker_0] 80.0 76.59603372828778
+2026-01-20 05:12:58,360 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:12:58,360 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 81
+2026-01-20 05:12:58,360 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "87"}
+2026-01-20 05:12:58,360 - INFO - worker_0 DECREASE labor < 87.0
+2026-01-20 05:12:58,360 - INFO - [WORKER] worker_0 t=30:
+labor=87.0
+Q=19.928650889772516
+P=8.007134911022748
+profit=76.55712644703658
+surplus=92.4289525834036
+u=76.55712644703658
+2026-01-20 05:12:58,360 - INFO - Time for iteration 0-31: 81.73192 seconds
+2026-01-20 05:12:58,360 - INFO - FPS: 0.38
+2026-01-20 05:12:58,360 - INFO - APS: 0.38
+2026-01-20 05:12:58,360 - INFO - Time remaining 32-50: 50.09376 seconds
+2026-01-20 05:12:58,360 - INFO - TIMESTEP 31
+2026-01-20 05:12:58,360 - INFO - [running avg worker_0] 80.0 76.5960337282878
+2026-01-20 05:13:02,531 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:02,531 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 240
+2026-01-20 05:13:02,531 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:13:02,531 - INFO - worker_0 DECREASE labor < 85.0
+2026-01-20 05:13:02,531 - INFO - [WORKER] worker_0 t=31:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:13:02,531 - INFO - Time for iteration 0-32: 85.90275 seconds
+2026-01-20 05:13:02,531 - INFO - FPS: 0.37
+2026-01-20 05:13:02,531 - INFO - APS: 0.37
+2026-01-20 05:13:02,531 - INFO - Time remaining 33-50: 48.32030 seconds
+2026-01-20 05:13:02,531 - INFO - TIMESTEP 32
+2026-01-20 05:13:02,531 - INFO - [running avg worker_0] 80.0 76.59395709227907
+2026-01-20 05:13:04,381 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:04,383 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 69
+2026-01-20 05:13:04,383 - INFO - LLM OUTPUT RECURSE 0	{
+  "LABOR": "85"
+}
+2026-01-20 05:13:04,383 - INFO - [WORKER] worker_0 t=32:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:13:04,383 - INFO - Time for iteration 0-33: 87.75454 seconds
+2026-01-20 05:13:04,383 - INFO - FPS: 0.38
+2026-01-20 05:13:04,383 - INFO - APS: 0.38
+2026-01-20 05:13:04,383 - INFO - Time remaining 34-50: 45.20689 seconds
+2026-01-20 05:13:04,383 - INFO - TIMESTEP 33
+2026-01-20 05:13:04,383 - INFO - [running avg worker_0] 80.0 76.60653527875897
+2026-01-20 05:13:08,438 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:08,439 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 238
+2026-01-20 05:13:08,439 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:13:08,439 - INFO - [WORKER] worker_0 t=33:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:13:08,439 - INFO - Time for iteration 0-34: 91.81063 seconds
+2026-01-20 05:13:08,439 - INFO - FPS: 0.37
+2026-01-20 05:13:08,439 - INFO - APS: 0.37
+2026-01-20 05:13:08,439 - INFO - Time remaining 35-50: 43.20500 seconds
+2026-01-20 05:13:08,439 - INFO - TIMESTEP 34
+2026-01-20 05:13:08,439 - INFO - [running avg worker_0] 80.0 76.61284351393289
+2026-01-20 05:13:09,761 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:09,761 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 31
+2026-01-20 05:13:09,761 - INFO - LLM OUTPUT RECURSE 0	{
+  "LABOR": "85"
+}
+2026-01-20 05:13:09,761 - INFO - [WORKER] worker_0 t=34:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:13:09,761 - INFO - Time for iteration 0-35: 93.13287 seconds
+2026-01-20 05:13:09,761 - INFO - FPS: 0.38
+2026-01-20 05:13:09,761 - INFO - APS: 0.38
+2026-01-20 05:13:09,761 - INFO - Time remaining 36-50: 39.91409 seconds
+2026-01-20 05:13:09,761 - INFO - TIMESTEP 35
+2026-01-20 05:13:09,761 - INFO - [running avg worker_0] 80.0 76.6191517491068
+2026-01-20 05:13:12,933 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:12,933 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 170
+2026-01-20 05:13:12,933 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:13:12,933 - INFO - [WORKER] worker_0 t=35:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:13:12,933 - INFO - Time for iteration 0-36: 96.30503 seconds
+2026-01-20 05:13:12,933 - INFO - FPS: 0.37
+2026-01-20 05:13:12,933 - INFO - APS: 0.37
+2026-01-20 05:13:12,933 - INFO - Time remaining 37-50: 37.45196 seconds
+2026-01-20 05:13:12,933 - INFO - TIMESTEP 36
+2026-01-20 05:13:12,933 - INFO - [running avg worker_0] 80.0 76.63172993558669
+2026-01-20 05:13:16,742 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:16,742 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 212
+2026-01-20 05:13:16,742 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:13:16,742 - INFO - [WORKER] worker_0 t=36:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:13:16,742 - INFO - Time for iteration 0-37: 100.11371 seconds
+2026-01-20 05:13:16,742 - INFO - FPS: 0.37
+2026-01-20 05:13:16,742 - INFO - APS: 0.37
+2026-01-20 05:13:16,742 - INFO - Time remaining 38-50: 35.17509 seconds
+2026-01-20 05:13:16,742 - INFO - TIMESTEP 37
+2026-01-20 05:13:16,742 - INFO - [running avg worker_0] 80.0 76.63417123114985
+2026-01-20 05:13:21,251 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:21,251 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 274
+2026-01-20 05:13:21,251 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "82"}
+2026-01-20 05:13:21,251 - INFO - worker_0 DECREASE labor < 82.0
+2026-01-20 05:13:21,251 - INFO - [WORKER] worker_0 t=37:
+labor=82.0
+Q=19.153814677664766
+P=8.084618532233524
+profit=76.682048041548
+surplus=91.19471594133137
+u=76.682048041548
+2026-01-20 05:13:21,251 - INFO - Time for iteration 0-38: 104.62302 seconds
+2026-01-20 05:13:21,251 - INFO - FPS: 0.36
+2026-01-20 05:13:21,251 - INFO - APS: 0.36
+2026-01-20 05:13:21,251 - INFO - Time remaining 39-50: 33.03885 seconds
+2026-01-20 05:13:21,251 - INFO - TIMESTEP 38
+2026-01-20 05:13:21,251 - INFO - [running avg worker_0] 80.0 76.6366300913154
+2026-01-20 05:13:25,386 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:25,386 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 241
+2026-01-20 05:13:25,386 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:13:25,386 - INFO - worker_0 DECREASE labor < 85.0
+2026-01-20 05:13:25,386 - INFO - [WORKER] worker_0 t=38:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:13:25,386 - INFO - Time for iteration 0-39: 108.75772 seconds
+2026-01-20 05:13:25,386 - INFO - FPS: 0.36
+2026-01-20 05:13:25,386 - INFO - APS: 0.36
+2026-01-20 05:13:25,386 - INFO - Time remaining 40-50: 30.67525 seconds
+2026-01-20 05:13:25,386 - INFO - TIMESTEP 39
+2026-01-20 05:13:25,386 - INFO - [running avg worker_0] 80.0 76.6366300913154
+2026-01-20 05:13:27,555 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:27,555 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 90
+2026-01-20 05:13:27,555 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:13:27,555 - INFO - [WORKER] worker_0 t=39:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:13:27,555 - INFO - Time for iteration 0-40: 110.92728 seconds
+2026-01-20 05:13:27,555 - INFO - FPS: 0.36
+2026-01-20 05:13:27,555 - INFO - APS: 0.36
+2026-01-20 05:13:27,556 - INFO - Time remaining 41-50: 27.73182 seconds
+2026-01-20 05:13:27,556 - INFO - TIMESTEP 40
+2026-01-20 05:13:27,556 - INFO - [running avg worker_0] 80.0 76.6366300913154
+2026-01-20 05:13:32,731 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:32,732 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 304
+2026-01-20 05:13:32,732 - INFO - LLM OUTPUT RECURSE 0	Based on the historical data, it appears that the optimal labor choice is around 82-85 hours per week, as indicated by the best 5 timesteps where increasing labor increased utility (utility = profit). However, simply choosing a fixed amount of labor from this range may not be optimal, as it does not take into account the varying effects of labor on profit and exploration.
+
+To balance exploration and exploitation while maximizing profit, I recommend using a combination of the historical average and the best 5 timesteps. The historical average labor choice was around 80 hours per week, which corresponds to an average profit of pi=76.6366300913154. However, we know that increasing labor increased utility in some cases (timesteps 6, 11, 2, 4, and 16), suggesting that the optimal labor choice may be higher than 80 hours.
+
+To exploit this knowledge while still exploring different labor choices, I suggest choosing a range of labor values around the historical average. A possible choice could be:
+
+{"LABOR": "85"}
+
+This choice balances exploitation (choosing a high value based on historical data) with exploration (trying a slightly different value from the historical average). However, if you want to further explore other options and balance between these two strategies, you can use a range of values or try something like:
+
+{"LABOR": [80, 85, 90]}
+
+This will allow for some variation in labor choice while still being close to the historical average.
+2026-01-20 05:13:34,723 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:34,724 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 79
+2026-01-20 05:13:34,724 - INFO - LLM OUTPUT RECURSE 1	{"LABOR": "85"}
+2026-01-20 05:13:34,724 - INFO - [WORKER] worker_0 t=40:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:13:34,724 - INFO - Time for iteration 0-41: 118.09587 seconds
+2026-01-20 05:13:34,724 - INFO - FPS: 0.35
+2026-01-20 05:13:34,724 - INFO - APS: 0.35
+2026-01-20 05:13:34,724 - INFO - Time remaining 42-50: 25.92348 seconds
+2026-01-20 05:13:34,724 - INFO - TIMESTEP 41
+2026-01-20 05:13:34,724 - INFO - [running avg worker_0] 80.0 76.6366300913154
+2026-01-20 05:13:38,817 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:38,817 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 228
+2026-01-20 05:13:38,817 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:13:38,817 - INFO - [WORKER] worker_0 t=41:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:13:38,817 - INFO - Time for iteration 0-42: 122.18924 seconds
+2026-01-20 05:13:38,817 - INFO - FPS: 0.34
+2026-01-20 05:13:38,817 - INFO - APS: 0.34
+2026-01-20 05:13:38,817 - INFO - Time remaining 43-50: 23.27414 seconds
+2026-01-20 05:13:38,817 - INFO - TIMESTEP 42
+2026-01-20 05:13:38,818 - INFO - [running avg worker_0] 80.0 76.63417123114985
+2026-01-20 05:13:42,260 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:42,260 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 183
+2026-01-20 05:13:42,260 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "82"}
+2026-01-20 05:13:42,260 - INFO - worker_0 DECREASE labor < 82.0
+2026-01-20 05:13:42,260 - INFO - [WORKER] worker_0 t=42:
+labor=82.0
+Q=19.153814677664766
+P=8.084618532233524
+profit=76.682048041548
+surplus=91.19471594133137
+u=76.682048041548
+2026-01-20 05:13:42,260 - INFO - Time for iteration 0-43: 125.63217 seconds
+2026-01-20 05:13:42,260 - INFO - FPS: 0.34
+2026-01-20 05:13:42,260 - INFO - APS: 0.34
+2026-01-20 05:13:42,260 - INFO - Time remaining 44-50: 20.45175 seconds
+2026-01-20 05:13:42,260 - INFO - TIMESTEP 43
+2026-01-20 05:13:42,261 - INFO - [running avg worker_0] 80.0 76.6366300913154
+2026-01-20 05:13:44,770 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:44,770 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 118
+2026-01-20 05:13:44,770 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "85"}
+2026-01-20 05:13:44,770 - INFO - worker_0 DECREASE labor < 85.0
+2026-01-20 05:13:44,771 - INFO - [WORKER] worker_0 t=43:
+labor=85.0
+Q=19.620527543987794
+P=8.03794724560122
+profit=76.63287083823711
+surplus=91.95702038465873
+u=76.63287083823711
+2026-01-20 05:13:44,771 - INFO - Time for iteration 0-44: 128.14236 seconds
+2026-01-20 05:13:44,771 - INFO - FPS: 0.34
+2026-01-20 05:13:44,771 - INFO - APS: 0.34
+2026-01-20 05:13:44,771 - INFO - Time remaining 45-50: 17.47396 seconds
+2026-01-20 05:13:44,771 - INFO - TIMESTEP 44
+2026-01-20 05:13:44,771 - INFO - [running avg worker_0] 80.0 76.6366300913154
+2026-01-20 05:13:47,935 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:47,936 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 171
+2026-01-20 05:13:47,936 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "80"}
+2026-01-20 05:13:47,936 - INFO - worker_0 DECREASE labor < 80.0
+2026-01-20 05:13:47,936 - INFO - [WORKER] worker_0 t=44:
+labor=80.0
+Q=18.839539859028303
+P=8.116046014097169
+profit=76.67048035209704
+surplus=90.64898548528723
+u=76.67048035209704
+2026-01-20 05:13:47,936 - INFO - Time for iteration 0-45: 131.30758 seconds
+2026-01-20 05:13:47,936 - INFO - FPS: 0.34
+2026-01-20 05:13:47,936 - INFO - APS: 0.34
+2026-01-20 05:13:47,936 - INFO - Time remaining 46-50: 14.58973 seconds
+2026-01-20 05:13:47,936 - INFO - TIMESTEP 45
+2026-01-20 05:13:47,936 - INFO - [running avg worker_0] 80.0 76.63643393099969
+2026-01-20 05:13:50,851 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:50,851 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 145
+2026-01-20 05:13:50,851 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "82"}
+2026-01-20 05:13:50,851 - INFO - worker_0 INCREASE labor > 82.0
+2026-01-20 05:13:50,851 - INFO - [WORKER] worker_0 t=45:
+labor=82.0
+Q=19.153814677664766
+P=8.084618532233524
+profit=76.682048041548
+surplus=91.19471594133137
+u=76.682048041548
+2026-01-20 05:13:50,851 - INFO - Time for iteration 0-46: 134.22281 seconds
+2026-01-20 05:13:50,851 - INFO - FPS: 0.34
+2026-01-20 05:13:50,851 - INFO - APS: 0.34
+2026-01-20 05:13:50,851 - INFO - Time remaining 47-50: 11.67155 seconds
+2026-01-20 05:13:50,851 - INFO - TIMESTEP 46
+2026-01-20 05:13:50,851 - INFO - [running avg worker_0] 80.0 76.64268001072526
+2026-01-20 05:13:52,786 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:52,786 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 72
+2026-01-20 05:13:52,786 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "81"}
+2026-01-20 05:13:52,786 - INFO - worker_0 INCREASE labor > 81.0
+2026-01-20 05:13:52,786 - INFO - [WORKER] worker_0 t=46:
+labor=81.0
+Q=18.99699737209999
+P=8.10030026279
+profit=76.68078227986248
+surplus=90.92567826322122
+u=76.68078227986248
+2026-01-20 05:13:52,786 - INFO - Time for iteration 0-47: 136.15814 seconds
+2026-01-20 05:13:52,786 - INFO - FPS: 0.35
+2026-01-20 05:13:52,786 - INFO - APS: 0.35
+2026-01-20 05:13:52,786 - INFO - Time remaining 48-50: 8.69094 seconds
+2026-01-20 05:13:52,786 - INFO - TIMESTEP 47
+2026-01-20 05:13:52,787 - INFO - [running avg worker_0] 80.0 76.64319510711354
+2026-01-20 05:13:54,586 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:54,587 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 65
+2026-01-20 05:13:54,587 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "83"}
+2026-01-20 05:13:54,587 - INFO - worker_0 DECREASE labor < 83.0
+2026-01-20 05:13:54,587 - INFO - [WORKER] worker_0 t=47:
+labor=83.0
+Q=19.31000213922559
+P=8.068999786077441
+profit=76.67440355841131
+surplus=91.45621226141105
+u=76.67440355841131
+2026-01-20 05:13:54,587 - INFO - Time for iteration 0-48: 137.95862 seconds
+2026-01-20 05:13:54,587 - INFO - FPS: 0.35
+2026-01-20 05:13:54,587 - INFO - APS: 0.35
+2026-01-20 05:13:54,587 - INFO - Time remaining 49-50: 5.74828 seconds
+2026-01-20 05:13:54,587 - INFO - TIMESTEP 48
+2026-01-20 05:13:54,587 - INFO - [running avg worker_0] 80.0 76.64527174312225
+2026-01-20 05:13:58,114 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:13:58,114 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 195
+2026-01-20 05:13:58,114 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "83"}
+2026-01-20 05:13:58,115 - INFO - [WORKER] worker_0 t=48:
+labor=83.0
+Q=19.31000213922559
+P=8.068999786077441
+profit=76.67440355841131
+surplus=91.45621226141105
+u=76.67440355841131
+2026-01-20 05:13:58,115 - INFO - Time for iteration 0-49: 141.48638 seconds
+2026-01-20 05:13:58,115 - INFO - FPS: 0.35
+2026-01-20 05:13:58,115 - INFO - APS: 0.35
+2026-01-20 05:13:58,115 - INFO - Time remaining 50-50: 2.88748 seconds
+2026-01-20 05:13:58,115 - INFO - TIMESTEP 49
+2026-01-20 05:13:58,115 - INFO - [running avg worker_0] 80.0 76.64488951896541
+2026-01-20 05:14:00,681 - INFO - HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-01-20 05:14:00,682 - INFO - Ollama Token Usage - Prompt: 4096, Completion: 124
+2026-01-20 05:14:00,682 - INFO - LLM OUTPUT RECURSE 0	{"LABOR": "83"}
+2026-01-20 05:14:00,682 - INFO - [WORKER] worker_0 t=49:
+labor=83.0
+Q=19.31000213922559
+P=8.068999786077441
+profit=76.67440355841131
+surplus=91.45621226141105
+u=76.67440355841131
+2026-01-20 05:14:00,682 - INFO - Time for iteration 0-50: 144.05373 seconds
+2026-01-20 05:14:00,682 - INFO - FPS: 0.35
+2026-01-20 05:14:00,682 - INFO - APS: 0.35
+2026-01-20 05:14:00,682 - INFO - Time remaining 51-50: 0.00000 seconds
+2026-01-20 05:14:00,682 - INFO - Simulation completed successfully!
