@@ -1,24 +1,42 @@
 {
   "main": {
-    "id": "fd8ec3d0a30b5608",
+    "id": "c99e49916645f5fc",
     "type": "split",
     "children": [
       {
-        "id": "806b5bf3297e762b",
+        "id": "891ecd184f8d611b",
         "type": "tabs",
         "children": [
           {
-            "id": "643f1f46d044077b",
+            "id": "278f4dcded672697",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_Project/4-2학기/금융계량경제학/1_요약 및 정리/5. unit root test.md",
+                "file": "1_Project/4-2학기/금융계량경제학/1_요약 및 정리/금계중간0413.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5. unit root test"
+              "title": "금계중간0413"
+            }
+          }
+        ]
+      },
+      {
+        "id": "907d3c2846a4382f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cd21afa2a9826161",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "1_Project/4-2학기/금융계량경제학/2_학습자료/05unit_root_0409.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "05unit_root_0409"
             }
           }
         ]
@@ -27,15 +45,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "8da65da15da254e9",
+    "id": "256d5f53f3ea59d3",
     "type": "split",
     "children": [
       {
-        "id": "a00b184f5edd66c3",
+        "id": "03a96b6cf26f3c76",
         "type": "tabs",
         "children": [
           {
-            "id": "0485ee94cd54e8b0",
+            "id": "b726770b4ac8d34a",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +66,7 @@
             }
           },
           {
-            "id": "caaa8bf5a918ff6d",
+            "id": "7e594a74fbf11f70",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +83,7 @@
             }
           },
           {
-            "id": "e483609a9d877ad3",
+            "id": "b3281ab7afa7436b",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -75,7 +93,7 @@
             }
           },
           {
-            "id": "04329535e99c9411",
+            "id": "d2537323b861dfa9",
             "type": "leaf",
             "state": {
               "type": "VIEW_TYPE_LONGFORM_EXPLORER",
@@ -88,24 +106,24 @@
       }
     ],
     "direction": "horizontal",
-    "width": 224.5,
+    "width": 200,
     "collapsed": true
   },
   "right": {
-    "id": "84b35b5e8f43c9a7",
+    "id": "4304a9176f35f907",
     "type": "split",
     "children": [
       {
-        "id": "d911cd25ca7b2ea0",
+        "id": "543b9b35aaf46454",
         "type": "tabs",
         "children": [
           {
-            "id": "0699eab065383220",
+            "id": "3a9b27f294951185",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1_Project/4-1 학부/계량경제학/계량기말/12. 이분산성.md",
+                "file": "1_Project/4-2학기/금융계량경제학/3_기타/강의 텍스트/금계06.2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,25 +133,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "12. 이분산성 의 백링크"
+              "title": "금계06.2 의 백링크"
             }
           },
           {
-            "id": "f2b047011e3568fb",
+            "id": "3486f35ac8eed346",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1_Project/4-1 학부/계량경제학/계량기말/12. 이분산성.md",
+                "file": "1_Project/4-2학기/금융계량경제학/3_기타/강의 텍스트/금계06.2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "12. 이분산성 의 나가는 링크"
+              "title": "금계06.2 의 나가는 링크"
             }
           },
           {
-            "id": "0e3f3c6ca0d4a5ad",
+            "id": "5006bf9c232c9469",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -148,18 +166,18 @@
             }
           },
           {
-            "id": "5a05dc611134647f",
+            "id": "9074906148a73556",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "1_Project/4-1 학부/계량경제학/계량기말/12. 이분산성.md",
+                "file": "1_Project/4-2학기/금융계량경제학/3_기타/강의 텍스트/금계06.2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "12. 이분산성 의 개요"
+              "title": "금계06.2 의 개요"
             }
           }
         ]
@@ -182,53 +200,52 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "643f1f46d044077b",
+  "active": "278f4dcded672697",
   "lastOpenFiles": [
-    "1_Project/4-2학기/금융계량경제학/1_요약 및 정리/4. ARMA.md",
+    "1_Project/4-2학기/금융계량경제학/2_학습자료/05unit_root_0409.pdf",
+    "1_Project/4-2학기/금융계량경제학/1_요약 및 정리/금계중간0413.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/금계 강의 텍스트/금계07.2.md",
+    "1_Project/4-2학기/회계원리/1_요약 및 정리/AccEntities.md",
     "1_Project/4-2학기/금융계량경제학/1_요약 및 정리/5. unit root test.md",
-    "1_Project/4-2학기/_일본 석사 프로젝트/학습 로그/26.4.9..md",
-    "1_Project/4-2학기/_일본 석사 프로젝트/학습 로그/26.4.8 copy.md",
-    "1_Project/4-2학기/금융계량경제학/2_학습자료/05unit_root_test_finecon.pdf",
-    "1_Project/4-2학기/금융계량경제학/2_학습자료/04ARMA0331.pdf",
-    "desktop.ini",
-    "1_Project/4-2학기/회계원리/2_학습자료/5 Lecture Note.pdf",
-    "1_Project/4-2학기/금융계량경제학/2_학습자료/03basic time series 0331.pdf",
-    "1_Project/4-2학기/금융계량경제학/2_학습자료/02Return_Predictability1.pdf",
-    "1_Project/4-2학기/금융계량경제학/1_요약 및 정리/3. Basic Time Series.md",
-    "Pasted image 20260405155703.png",
-    "1_Project/4-2학기/금융계량경제학/1_요약 및 정리/1. OLS review.md",
-    "1_Project/4-2학기/금융계량경제학/1_요약 및 정리/2. Return Predictability I.md",
-    "1_Project/4-2학기/금융계량경제학/2_학습자료/01OLS_fin_econ.pdf",
-    "1_Project/4-2학기/금융계량경제학/3_기타/Wooldridge-Introductory-Econometrics_-A-Modern-Approach-6th-Edition-c2016.pdf",
+    "1_Project/4-2학기/회계원리/2_학습자료/6 Lecture Note.pdf",
+    "1_Project/4-2학기/회계원리/1_요약 및 정리/회원중간0415.md",
+    "Pasted.md",
+    "1_Project/4-2학기/회계원리/1_요약 및 정리/6. Depre. & Adj. T. B. & Closing.md",
     "1_Project/4-2학기/회계원리/1_요약 및 정리/5. Adjusting Entries.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/학습 로그/26.4.14.md",
+    "1_Project/4-2학기/회계원리/3_기타/Pasted image 20260414203002.png",
+    "1_Project/4-2학기/회계원리/3_기타/Pasted image 20260414180748.png",
     "1_Project/4-2학기/회계원리/1_요약 및 정리/4. Recording Process.md",
     "1_Project/4-2학기/회계원리/2_학습자료/4-1 4-2 Lecture Note with answers.pdf",
-    "1_Project/4-2학기/_일본 석사 프로젝트/학습 로그/26.4.2.md",
-    "Pasted image 20260401172037.png",
-    "Pasted image 20260401171229.png",
-    "Pasted image 20260401163944.png",
-    "1_Project/4-2학기/_일본 석사 프로젝트/STRAGIES.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/학습 로그/26.4.15.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/학습 로그/26.4.14 copy.md",
+    "1_Project/4-2학기/회계원리/1_요약 및 정리/3. Acconting EQ. & Financial Statements.md",
     "1_Project/4-2학기/회계원리/2_학습자료/3-2 Lecture Note.pdf",
-    "1_Project/4-2학기/_연구 및 기타/학습 로그/26.3.31.md",
-    "1_Project/4-2학기/_일본 석사 프로젝트/작업중논문&자료/llmecon++ 아웃라인.md",
-    "1_Project/4-2학기/_일본 석사 프로젝트/학습 로그/26.3.30 학로.md",
-    "1_Project/4-2학기/_일본 석사 프로젝트/학습 로그/26.3.31.md",
-    "1_Project/4-2학기/_일본 석사 프로젝트/학습 로그/26.3.26 학습 로그.md",
-    "1_Project/4-2학기/_일본 석사 프로젝트/학습 로그/26.3.25 학습 로그.md",
-    "1_Project/4-2학기/_연구 및 기타/학습 로그/26.3.30 학로.md",
-    "무제.md",
-    "1_Project/4-2학기/_연구 및 기타/학습 로그/26.3.25 학습 로그.md",
-    "1_Project/4-2학기/_연구 및 기타/학습 로그/26.3.26 학습 로그.md",
-    "1_Project/4-2학기/_연구 및 기타/llmecon++ 아웃라인.md",
-    "1_Project/4-2학기/_연구 및 기타/작업중논문&자료/llmecon++ 아웃라인.md",
-    "README.md",
-    "1_Project/4-2학기/금융계량경제학/3_기타/Pasted image 20260325163011.png",
-    "1_Project/4-2학기/금융계량경제학/3_기타/Pasted image 20260325164527.png",
-    "Pasted image 20260325163854.png",
-    "Pasted image 20260325164014.png",
-    "1_Project/4-2학기/금융계량경제학/3_기타/Pasted image 20260325184946.png",
-    "1_Project/4-2학기/금융계량경제학/3_기타/Pasted image 20260325185535.png",
-    "1_Project/4-2학기/llmecon++ 아웃라인.md",
-    "4_Archive/4-1 학부/선형대수학/선대중간/필기/5. Transfomations.md"
+    "1_Project/4-2학기/회계원리/3_기타/Pasted image 20260414202300.png",
+    "1_Project/4-2학기/회계원리/2_학습자료/3-1 Lecture Note.pdf",
+    "1_Project/4-2학기/회계원리/3_기타/Pasted image 20260414201115.png",
+    "1_Project/4-2학기/회계원리/1_요약 및 정리/2. Understanding of Acc. & Acc. in Action.md",
+    "1_Project/4-2학기/회계원리/2_학습자료/2-2 Lecture Note - Accounting in Action Accounting Equation 1.pdf",
+    "1_Project/4-2학기/회계원리/2_학습자료/2-1 Lecture Note.pdf",
+    "1_Project/4-2학기/회계원리/2_학습자료/5 Lecture Note.pdf",
+    "1_Project/4-2학기/회계원리/3_기타/Pasted image 20260414182039.png",
+    "1_Project/4-2학기/회계원리/3_기타/Pasted image 20260414181413.png",
+    "1_Project/4-2학기/회계원리/1_요약 및 정리/무제.md",
+    "1_Project/4-2학기/회계원리/3_기타/Pasted image 20260414120439.png",
+    "1_Project/4-2학기/금융계량경제학/3_기타/Pasted image 20260413162150.png",
+    "1_Project/4-2학기/회계원리/3_기타/Pasted image 20260414125636.png",
+    "1_Project/4-2학기/금융계량경제학/1_요약 및 정리/금계중간0413.pdf",
+    "1_Project/4-2학기/_일본 석사 프로젝트/금계 강의 텍스트/금계07.1.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/회원 강의 텍스트/회원07.1.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/회원 강의 텍스트/회원05.1.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/회원 강의 텍스트/회원05.2.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/회원 강의 텍스트/회원06.2.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/회원 강의 텍스트/회원06.1.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/회원 강의 텍스트/회원01.2.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/회원 강의 텍스트/회원02.1.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/회원 강의 텍스트/회원03.1.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/회원 강의 텍스트/회원03.2.md",
+    "1_Project/4-2학기/_일본 석사 프로젝트/회원 강의 텍스트",
+    "1_Project/4-2학기/회계원리/3_기타/Pasted image 20260414125608.png"
   ]
 }
