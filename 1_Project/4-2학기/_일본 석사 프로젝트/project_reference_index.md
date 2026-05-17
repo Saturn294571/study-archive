@@ -73,6 +73,50 @@
   - 경제학계열 후보를 AI 커리어 기준으로 재해석한 문서다.
   - 정보과학/데이터사이언스/AI/NLP/ML 연구실 후보는 아직 별도 확장 조사가 필요하다.
 
+### `연구/admission_consulting_2026-05-11.md`
+- 역할: 일본 금융/경제 AI 석사 입학 컨설팅 실행판.
+- 언제 읽을 것:
+  - 이전 세션의 입시 컨설팅 흐름을 이어갈 때
+  - 후보 조사에서 실제 컨택/서류 제작으로 넘어갈 때
+  - 5월 말까지의 30일 실행계획을 확인할 때
+- 핵심 내용:
+  - 현재 포지션: 경제학 도메인 이해를 가진 AI/ML 연구자 또는 엔지니어 지향 지원자.
+  - 최우선 지원축: NAIST, Tsukuba Risk, Hitotsubashi SDS, Shiga DS, Kyoto Social Informatics.
+  - 경제학계 AI 친화 후보: Kobe KIMAP/Iwatsubo, Kyushu Murao, Tohoku DSSR, Osaka Matsumura.
+  - 2026-05-11 기준 NAIST/Tsukuba/Kobe 공식 일정 확인 메모.
+  - 5월 말까지 만들 산출물: CV, LLM Economist++ research summary, 1쪽 research proposal, contact_targets.
+- 주의:
+  - 후보를 더 늘리는 문서가 아니라 컨택 가능한 패키지를 만들기 위한 실행 문서다.
+
+### `연구/cv_draft.md`
+- 역할: 일본 석사 컨택/출원용 CV 초안.
+- 언제 읽을 것:
+  - 교수 컨택 패키지를 만들 때
+  - 연구경험/기술스택/어학/학력 정보를 정리할 때
+- 핵심 내용:
+  - 현재 포지셔닝 문장.
+  - LLM Economist++ 연구경험 요약.
+  - 기술스택, 연구관심, 지원 적합성, 누락 정보 체크리스트.
+
+### `연구/research_summary_llmeconpp.md`
+- 역할: LLM Economist++를 교수 컨택용 1페이지 research summary로 바꾸기 위한 초안.
+- 언제 읽을 것:
+  - 컨택 메일 첨부용 연구요약 작성
+  - 기존 연구를 석사 연구계획서와 연결할 때
+- 핵심 내용:
+  - 연구질문, 방법, 예비 결과, 기여, 한계, 석사 연구 연결 방향.
+  - 과장하지 않고 방어 가능한 수준으로 기여를 정리.
+
+### `연구/contact_targets.md`
+- 역할: 컨택 후보 교수/프로그램 관리표.
+- 언제 읽을 것:
+  - 후보를 실제 컨택 대상으로 압축할 때
+  - 각 교수별 연구 연결 문장과 질문을 만들 때
+- 핵심 내용:
+  - NAIST, Tsukuba, Kobe를 1차 컨택 후보로 설정.
+  - Kyushu, Tohoku, Hitotsubashi, Shiga를 2차 후보로 설정.
+  - 후보별로 최근 연구 키워드, 연결 문장, 질문, 입시 루트를 채우도록 설계.
+
 ### `기타/대학원 계획.md`
 - 역할: 초기 대학원 진학 고민과 필요 역량 정리.
 - 언제 읽을 것:
@@ -467,4 +511,3 @@
 
 5. `ASSISTENT.md`
    - 연구조수 세션의 행동 규칙과 평가 기준.
-
