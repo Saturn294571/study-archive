@@ -1,271 +1,0 @@
-1.A coupon bond pays annual interest, has a par value of $1,000, matures in four years, has a coupon rate of 10%, and has a yield to maturity of 12%. The current yield on this bond is?
-?
-
-A.?10.65%.
-B.?10.45%.
-C.?10.95%.
-D.?10.52%.
-E.?None of the optionsFV = 1,000, n = 4, PMT = 100, i = 12, PV = 939.25; $100/$939.25 = 10.65%.
-2.A coupon bond that pays interest annually has a par value of $1,000, matures in five years, and has a yield to maturity of 10%. The intrinsic value of the bond today will be ______ if the coupon rate is 7%.?
-?
-
-A.?$712.99
-B.?$620.92
-C.?$1,123.01
-D.?$886.28
-E.?$1,000.00FV = 1,000, PMT = 70, n = 5, i = 10, PV = 886.28.
-3.A coupon bond that pays interest of $100 annually has a par value of $1,000, matures in five years, and is selling today at a $72 discount from par value. The yield to maturity on this bond is?
-?
-
-A.?6.00%.
-B.?8.33%.
-C.?12.00%.
-D.?60.00%.
-E.?None of the optionsFV = 1,000, PMT = 100, n = 5, PV = -928, i = 11.997%.
-4.You have just purchased a 10-year zero-coupon bond with a yield to maturity of 10% and a par value of $1,000. What would your rate of return at the end of the year be if you sell the bond? Assume the yield to maturity on the bond is 11% at the time you sell.?
-?
-
-A.?10.00%
-B.?20.42%
-C.?13.8%
-D.?1.4%
-E.?None of the options$1,000/(1.10)10 = $385.54; $1,000/(1.11)9 = $390.92; ($390.92 - $385.54)/$385.54 = 1.4%.
-5.Consider the following $1,000 par value zero-coupon bonds:
-
-??
-
-1) The yield to maturity on bond A is?
-?
-
-A.?10%.
-B.?11%.
-C.?12%.
-D.?14%.
-E.?None of the options($1,000 - $909.09) $909.09 = 10%.
-2) The yield to maturity on bond B is?
-?
-
-A.?10%.
-B.?11%.
-C.?12%.
-D.?14%.
-E.?None of the options($1,000 - $811.62)/$811.62 = 0.2321; (1.2321)^(1/2) - 1.0 = 11%
-3) The yield to maturity on bond C is?
-?
-
-A.?10%.
-B.?11%.
-C.?12%.
-D.?14%.
-E.?None of the options($1,000 - $711.78)/$711.78 = 0.4049; (1.4049)^(1/3)- 1.0 = 12%
-
-4) The yield to maturity on bond D is?
-?
-
-A.?10%.
-B.?11%.
-C.?12%.
-D.?14%.
-E.?None of the options($1,000 - $635.52)/$635.52 = 0.573515; (1.573515)1/4 - 1.0 = 12%.
-
-6.You purchased an annual interest coupon bond one year ago with six years remaining to maturity at the time of purchase. The coupon interest rate is 10% and par value is $1,000. At the time you purchased the bond, the yield to maturity was 8%. If you sold the bond after receiving the first interest payment and the bond's yield to maturity had changed to 7%, your annual total rate of return on holding the bond for that year would have been?
-?
-
-A.?7.00%.
-B.?8.00%.
-C.?9.95%.
-D.?11.95%.
-E.?None of the optionsFV = 1000, PMT = 100, n = 6, i = 8, PV = 1092.46; FV = 1,000, PMT = 100, n = 5, i = 7, PV = 1,123.01; HPR = (1,123.01 - 1,092.46 + 100)/1,092.46 = 11.95%.
-7.Three years ago you purchased a bond for $974.69. The bond had three years to maturity, a coupon rate of 8%, paid annually, and a face value of $1,000. Each year you reinvested all coupon interest at the prevailing reinvestment rate shown in the table below. Today is the bond's maturity date. What is your realized compound yield on the bond?
-
-???
-?
-
-A.?6.43%
-B.?7.96%
-C.?8.23%
-D.?8.97%
-E.?9.13%The investment grows to a total future value of $80 ¡¿ (1.072) ¡¿ (1.094) + $80 ¡¿ (1.094) + $1,080 = $1,261.34 over the three-year period. The realized compound yield is the yield that will compound the original investment to yield the same future value: $974.69 ¡¿ (1 + rcy)3 = $1,261.34, (1 + rcy)3 = 1.29409, 1 + rcy = 1.0897, rcy = 8.97%.
-8.You purchased an annual interest coupon bond one year ago that had nine years remaining to maturity at that time. The coupon interest rate was 10% and the par value was $1,000. At the time you purchased the bond, the yield to maturity was 8%. If you sold the bond after receiving the first interest payment and the yield to maturity continued to be 8%, your annual total rate of return on holding the bond for that year would have been?
-?
-
-A.?8.00%.
-B.?7.82%.
-C.?7.00%.
-D.?11.95%.
-E.?None of the optionsFV = 1,000, PMT = 100, n = 9, i = 8, PV = 1,124.94; FV = 1000, PMT = 100, n = 8, i = 8, PV = 1,114.93; HPR = (1,114.93 - 1,124.94 + 100)/1,124.94 = 8%.
-9.Suppose that all investors expect that interest rates for the 4 years will be as follows:
-
-??
-
-1) What is the price of 3-year zero-coupon bond with a par value of $1,000??
-?
-
-A.?$863.83
-B.?$816.58
-C.?$772.18
-D.?$765.55
-E.?None of the options$1,000/(1.05)(1.07)(1.09) = $816.58.
-
-2) If you have just purchased a 4-year zero-coupon bond, what would be the expected rate of return on your investment in the first year if the implied forward rates stay the same? (Par value of the bond = $1,000)?
-?
-
-A.?5%
-B.?7%
-C.?9%
-D.?10%
-E.?None of the optionsThe forward interest rate given for the first year of the investment is given as 5% (see table above).
-
-3) What is the price of a 2-year maturity bond with a 10% coupon rate paid annually? (Par value = $1,000)?
-?
-
-A.?$1,092
-B.?$1,054
-C.?$1,000
-D.?$1,073
-E.?None of the options[(1.05)(1.07)]1/2 - 1 = 6%; FV = 1000, n = 2, PMT = 100, i = 6, PV = $1,073.34.
-
-4) What is the yield to maturity of a 3-year zero-coupon bond??
-?
-
-A.?7.03%
-B.?9.00%
-C.?6.99%
-D.?7.49%
-E.?None of the options[(1.05)(1.07)(1.09)]1/3 - 1 = 6.99
-10.??
-
-1) What should the purchase price of a 2-year zero-coupon bond be if it is purchased at the beginning of year 2 and has face value of $1,000??
-?
-
-A.?$877.54
-B.?$888.33
-C.?$883.32
-D.?$893.36
-E.?$871.80$1,000/[(1.064)(1.071)] = $877.54.
-2) What would the yield to maturity be on a four-year zero-coupon bond purchased today??
-?
-
-A.?5.80%
-B.?7.30%
-C.?6.65%
-D.?7.25%
-E.?None of the options[(1.058) (1.064) (1.071) (1.073)] 1/4 - 1 = 6.65%
-3) Calculate the price at the beginning of year 1 of a 10% annual coupon bond with face value $1,000 and 5 years to maturity.?
-?
-
-A.?$1,105
-B.?$1,132
-C.?$1,179
-D.?$1,150
-E.?$1,119i = [(1.058) (1.064) (1.071) (1.073) (1.074)]1/5 - 1 = 6.8%; FV = 1000, PMT = 100, n = 5, i = 6.8, PV = $1,131.91
-11.The following is a list of prices for zero-coupon bonds with different maturities and par value of $1,000.
-
-??
-
-1) What is, according to the expectations theory, the expected forward rate in the third year??
-?
-
-A.?7.23%
-B.?9.37%
-C.?9.00%
-D.?10.9%862.57/788.66 - 1 = 9.37%
-2) What is the price of a 4-year maturity bond with a 10% coupon rate paid annually? (Par value = $1,000.)?
-
-A.?$742.09
-B.?$1,222.09
-C.?$1,035.66
-D.?$1,141.84(1,000/711.00)1/4 - 1 = 8.9%; FV = 1000, PMT = 100, n = 4, i = 8.9, PV = $1,035.66.3
-3) You have purchased a 4-year maturity bond with a 9% coupon rate paid annually. The bond has a par value of $1,000. What would the price of the bond be one year from now if the implied forward rates stay the same??
-?
-
-A.?$995.63
-B.?$1,108.88
-C.?$1,000.00
-D.?$1,042.78(925.16/711.00)1/3 - 1.0 = 9.17%; FV = 1000, PMT = 90, n = 3, i = 9.17, PV = $995.63
-12.??
-
-1) What should the purchase price of a 2-year zero-coupon bond be if it is purchased at the beginning of year 2 and has face value of $1,000??
-?
-
-A.?$877.54
-B.?$888.33
-C.?$883.32
-D.?$894.21
-E.?$871.80$1,000/[(1.055)(1.06)] = $894.21.
-2) Calculate the price at the beginning of year 1 of an 8% annual coupon bond with face value $1,000 and 5 years to maturity.?
-?
-
-A.?$1,105.47
-B.?$1,131.91
-C.?$1,084.25
-D.?$1,150.01
-E.?$719.75i = [(1.05) (1.055) (1.06) (1.065) (1.07)]1/5 - 1 = 6%; FV = 1000, PMT = 80, n = 5, i = 6, PV = $1084.25
-
-13.The duration of a par value bond with a coupon rate of 8% (paid annually) and a remaining time to maturity of 5 years is?
-?
-
-A.?5 years.
-B.?5.4 years.
-C.?4.17 years.
-D.?4.31 years.Calculations are shown below.
-
-
-14.A seven-year par value bond has a coupon rate of 9% (paid annually) and a modified duration of?
-?
-
-A.?7 years.
-B.?5.49 years.
-C.?5.03 years.
-D.?4.87 years.Calculations are shown below.
-
-
-15.An 8%, 15-year bond has a yield to maturity of 10% and duration of 8.05 years. If the market yield changes by 25 basis points, how much change will there be in the bond's price??
-?
-
-A.?1.83%
-B.?2.01%
-C.?3.27%
-D.?6.44%¥ÄP/P = (-8.05 ¡¿ 0.0025)/1.1 = 1.83%.16.Consider a bond selling at par with modified duration of 10.6 years and convexity of 210. A 2% decrease in yield would cause the price to increase by 21.2%, according to the duration rule. What would be the percentage price change according to the duration-with-convexity rule??
-?
-
-A.?21.2%
-B.?25.4%
-C.?17.0%
-D.?10.6%?P/P = -D ¡¿ ?y + (1/2) ¡¿ Convexity ¡¿ (?y)2; = -10.6 ¡¿ -.02 + (1/2) ¡¿ 210 ¡¿ (.02)2 = .212 + .042 = .254 (25.4%).17.Which of the following two bonds is more price sensitive to changes in interest rates?
-
-1) A par value bond, A, with a 12-year-to-maturity and a 12% coupon rate.
-2) A zero-coupon bond, B, with a 12-year-to-maturity and a 12% yield to maturity.?
-?
-
-A.?Bond A because of the higher yield to maturity.
-B.?Bond A because of the longer time to maturity.
-C.?Bond B because of the longer duration.
-D.?Both have the same sensitivity because both have the same yield to maturity.
-E.?None of the optionsDuration is the best measure of bond price sensitivity; the longer the duration the higher the price sensitivity.
-18.A 9%, 16-year bond has a yield to maturity of 11% and duration of 9.25 years. If the market yield changes by 32 basis points, how much change will there be in the bond's price??
-?
-
-A.?1.85%
-B.?2.01%
-C.?2.67%
-D.?6.44%¥ÄP/P = (-9.25 ¡¿ 0.0032)/1.11 = 2.67%.
-19.The duration of a par value bond with a coupon rate of 7% and a remaining time to maturity of 3 years is?
-?
-
-A.?3 years.
-B.?2.71 years.
-C.?2.81 years.
-D.?2.91 years.Calculations are shown below.
-
-
-20.The duration of a par value bond with a coupon rate of 8.7% and a remaining time to maturity of 6 years is?
-?
-
-A.?6.0 years.
-B.?5.1 years.
-C.?4.27 years.
-D.?3.95 years.
-E.?None of the optionsCalculations are shown below.
-
-
