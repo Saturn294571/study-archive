@@ -2,25 +2,58 @@
 
 작성일: 2026-05-03
 
-## 0. 수정된 학업·커리어 정체성
+## 0. 후보 평가 목적
 
-장기 목표는 좁은 의미의 경제학자가 아니라, **financial and socio-economic systems를 다루는 AI/ML researcher or engineer**에 가깝다. 더 정확히는 "경제학에서 AI로 확장하려는 지원자"가 아니라, **경제학적 사고를 훈련받은 AI공학 지향 지원자**다.
+이 문서는 연구실/대학 후보를 **행동 가능한 기준**으로 평가하기 위한 문서다. 지원자의 정체성을 고정하기보다, 각 후보가 다음 산출물과 연결되는지를 확인한다.
 
-지난 4년간 경제학을 주전공으로 공부하며 경제 시스템을 보는 사고방식을 익혔지만, 3학년 1학기 이후 소프트웨어 복수전공, 학부연구생 활동, 교수와의 학연생 논문 경험, 향후 연구 목표는 인공지능 공학에 훨씬 더 초점이 맞춰져 있다. 학회 관심도 경제학회보다는 NeurIPS, ICLR 등 AI/ML 연구 흐름에 더 가깝다.
+- Python/ML/통계/계량 기반 연구 또는 프로젝트 산출물
+- 금융·경제·사회 데이터 분석 경험
+- 텍스트 분석, 시계열, agent simulation, LLM 활용 연구 중 하나 이상의 구체적 결과물
+- CV, 연구요약, 연구계획서, 컨택 메일에서 설명 가능한 연구 핏
 
-따라서 석사 연구실 선택의 핵심 질문은 "경제학적으로 명문인가?"가 아니라 다음이다.
+후보 평가의 핵심 질문:
 
-> 이 연구실에서 2년 뒤 Python/ML/데이터분석/시계열/텍스트분석/LLM/agent simulation 기반 포트폴리오를 만들 수 있는가?
+> 이 연구실에서 2년 안에 검증 가능한 연구 산출물과 취업/진학에 설명 가능한 기술 포트폴리오를 만들 수 있는가?
 
-기존 LLM Economist++ / LLM 기반 경제 시뮬레이션 / ICRL 경험은 버리지 않는다. 다만 이를 "경제학 연구 경험"이라고 좁게 읽기보다, **AI 방법론을 경제 문제에 적용한 연구 경험, 실험 설계 경험, 논문 작성 경험**으로 재해석한다. 석사 이후의 방향은 Financial AI, Social Research AI, AI in Economics / Economy Simulation으로 확장한다.
+기존 LLM Economist++ / LLM 기반 경제 시뮬레이션 / ICRL 경험은 "경제학 논문 경험"으로만 설명하지 않는다. 컨택 및 CV에서는 **LLM/agent 기반 경제 시뮬레이션 구현, 실험 설계, 결과 해석 경험**으로 제한해 표현한다.
 
-상담용 자기설명은 다음 문장이 가장 정확하다.
+상담용 자기설명은 정체성 단정보다 다음의 사실 중심 문장으로 관리한다.
 
-> 저는 경제학을 주전공으로 공부하면서 경제 시스템을 보는 사고방식을 익혔지만, 3학년 이후에는 소프트웨어 복수전공과 학부연구생 활동을 통해 인공지능 공학 쪽으로 연구 관심이 이동했습니다.  
-> 현재 연구 경험도 LLM, agent, ICRL, 경제 시뮬레이션처럼 AI 방법론을 경제 문제에 적용하는 방향에 가깝습니다.  
-> 그래서 석사 연구실은 전통 경제학 주제 자체보다, AI/ML을 금융·사회경제 시스템에 적용할 수 있는 곳을 우선적으로 보고 싶습니다.  
-> 다만 제 강점은 경제학 배경을 버리는 것이 아니라, AI 모델을 실제 경제·금융·사회 문제에 적용할 수 있는 도메인 이해력으로 가져가는 것이라고 생각합니다.  
-> 이런 관점에서 경제학계 연구실과 정보/데이터사이언스계 연구실을 병행 탐색하는 것이 적절한지 조언을 구하고 싶습니다.
+> 경제학 주전공과 소프트웨어 복수전공을 병행했고, 학부연구생 활동에서 LLM/agent/economic simulation 관련 연구를 수행했습니다.  
+> 석사 연구실은 금융·경제·사회 문제를 ML/통계/AI 방법론으로 다루며, Python 기반 구현과 실험 결과를 만들 수 있는 곳을 우선적으로 검토하고 있습니다.  
+> 경제학계 연구실과 정보/데이터사이언스계 연구실을 병행 조사하되, 각 연구실의 최근 논문과 실제 지도 가능 주제에 맞춰 연구계획을 조정하려 합니다.
+
+### 0.1 2026-05-11 컨설팅 통합 메모
+
+`admission_consulting_2026-05-11.md`의 후보 추천 판단은 이 문서로 통합한다. 핵심은 다음이다.
+
+- 현재 지원전략은 전통 경제학 전형만이 아니라, 경제/금융/사회 문제를 ML·통계·AI로 다루는 연구실을 병행 탐색하는 방식으로 둔다.
+- LLM Economist++ 경험은 "경제학 논문 경험"으로만 좁히지 말고, **LLM/agent 기반 경제 시뮬레이션을 구현하고 실험한 연구 경험**으로 설명한다.
+- 후보 판단 기준은 "경제학적으로 유명한 연구실인가"보다 **2년 뒤 Python, ML, 데이터분석, 시계열, 텍스트분석, LLM/agent simulation 기반 포트폴리오를 만들 수 있는가**에 둔다.
+
+지원축은 두 갈래로 관리한다.
+
+| 지원축 | 핵심 후보 | 해석 |
+|---|---|---|
+| 정보계/DS계 메인 루트 | NAIST Social Computing/NLP, Tsukuba Risk, Hitotsubashi SDS, Shiga DS, Kyoto Social Informatics | 구현 포트폴리오와 데이터 기반 연구 산출물로 연결하기 쉬움 |
+| 경제학계 안의 AI 친화 루트 | Kobe Iwatsubo/KIMAP, Kyushu Murao, Tohoku DSSR, Osaka Matsumura, Kobe Motegi 등 | 경제학 배경을 살리되 연구계획서에 AI 구현 요소를 명시해야 함 |
+
+연구계획서는 모든 후보에게 하나의 만능 문장으로 보내지 말고, 다음 두 축 중 연구실별로 하나를 메인으로 조정한다.
+
+| 연구계획 축 | 예시 문장 | 특히 맞는 후보 |
+|---|---|---|
+| Financial AI | financial text + market data fusion for interpretable risk forecasting | Kobe Iwatsubo, Tsukuba Risk, Hitotsubashi SDS, Shiga DS |
+| Social/Economic AI Simulation | LLM/agent-based simulation for socio-economic decision making and market behavior | Kyushu Murao, NAIST Social Computing, Tohoku DSSR, Tsukuba Risk |
+
+### 0.2 연구 아이디어 사용 규칙
+
+`research_note.md`의 아이디어는 후보별 컨택에서 하나씩만 선택해 사용한다. 여러 아이디어를 동시에 제시하면 연구 핏이 흐려질 수 있다.
+
+| 아이디어 | 컨택용 표현 | 적합 후보 | 주의점 |
+|---|---|---|---|
+| 비평이 문화소비를 이끌어내는가 | 문화/콘텐츠 비평 텍스트가 소비 행동에 미치는 영향을 텍스트 분석과 시계열/인과추론으로 분석 | Tohoku DSSR, Hitotsubashi SDS, Shiga DS, Kyoto Social Informatics | 금융AI 직접성은 약하므로 Social Research AI로 분류 |
+| ICRL 불안정성 개선 | LLM-agent/economic simulation에서 history selection과 탐색 정보가 의사결정 안정성에 미치는 영향 검증 | NAIST Social Computing/NLP, Kyushu Murao, Tsukuba Risk | 단순 AdaGrad 적용으로 축소하지 말고 안정성/강건성 문제로 재정의 |
+| Black-Scholes Diffusion | diffusion-based generative modeling을 금융 시나리오 생성, 옵션/리스크 분석의 탐색적 도구로 검토 | Kobe Iwatsubo, Tsukuba Risk, 금융공학/계량 후보 | 수학 난도가 높고 기존 확률과정과의 차별화가 필요하므로 서브 아이디어로 취급 |
 
 ## 1. 현재 초안에 남아 있던 문제점
 
