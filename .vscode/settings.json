@@ -1,6 +1,7 @@
 {
     "markdown.marp.themes": [
       "a4-dark.css",
-      "a4-light.css"
+      "a4-light.css",
+      "a4-50-50.css"
     ]
   }
