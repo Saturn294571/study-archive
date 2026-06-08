@@ -22,7 +22,7 @@
 - 교수님이 반복한 직관과 주의사항이 힌트 형태로 남아 있어야 함
 - 수식은 가능하면 한 줄에 통합
 - 반복되는 어미, 문법적 장식, 수사적 표현 제거
-- 정의 -> 핵심식 -> 직관/힌트 순서
+- 정의 $\to$ 핵심식 $\to$ 직관/힌트 순서
 - 지나친 엄밀성보다 상위과정 초반 수준의 인사이트 우선
 - 다만 강의에서 반복한 유도과정/핵심개념은 빠뜨리면 안 됨
 
@@ -57,7 +57,7 @@
 
 좋은 예:
 
-- GARCH : $R_t$의 time-varying vola.(volatility) + vola. clustering 설명 -> 조건부 분산 모형화
+- GARCH : $R_t$의 time-varying vola.(volatility) + vola. clustering 설명 $\to$ 조건부 분산 모형화
 
 나쁜 예:
 
@@ -69,12 +69,17 @@
 
 ### 기호 사용
 
-- `->` : 인과/논리 전개
+- `$\to$` : 인과/논리 전개, plain `->` 쓰지 않음
 - `O` : 있음/성립
 - `X` : 없음/불성립
 - `?` : 복원 질문/직관 확인
-- `/` : 병렬 나열
-- `↑`, `↓` : 방향
+- `/` : 병렬 나열, 수식 분수에는 쓰지 않음
+- 수식 분수 : `X/Y` 대신 `\frac{X}{Y}`로 통일
+- 분산 : `var`, `variance`, `Var()` 대신 $\sigma^2$ 또는 `V()` 사용
+- 변수 : `var` 사용
+- Vector Auto-Regression : `VAR` 사용
+- `↑`, `↓` 또는 `\uparrow`, `\downarrow` : 단순히 크다/작다
+- `↑↑`, `↓↓` 또는 `\uparrow\uparrow`, `\downarrow\downarrow` : 커진다/작아진다
 - `approx.` 또는 `~` : 근사
 
 ### 약어 사용
@@ -86,7 +91,7 @@
 - `info. set`
 - `cond.`
 - `corr.`
-- `var.`
+- `var` : variable(변수), 분산 의미로 쓰지 않음
 - `rv(random variable)`
 - `LL(log likelihood)`
 - `IRF(Impulse Response Function)`
@@ -112,7 +117,7 @@
 
 ```md
 - 자산 하나
-	- $\sigma_t^2$ : scalar variance
+	- $\sigma_t^2$ : scalar $\sigma^2$
 ```
 
 좋은 예:
@@ -133,14 +138,14 @@
 
 ```md
 - 조건/장기분산 : $\omega>0,\quad \alpha,\beta\ge0,\quad \alpha+\beta<1,\quad E(\sigma_t^2)=\frac{\omega}{1-\alpha-\beta}$
-	- $\alpha+\beta\approx1$ -> shock 오래 감
+	- $\alpha+\beta\approx1$ $\to$ shock 오래 감
 ```
 
 예:
 
 ```md
-- Uncond. var. : $E(\sigma_t^2)=\frac{\alpha_0}{1-\sum_i\alpha_i}$
-	- 복원 hint : ARCH식 양변 $E(\cdot)$ -> conditional 변해도 장기 평균분산 O
+- Uncond. $\sigma^2$ : $E(\sigma_t^2)=\frac{\alpha_0}{1-\sum_i\alpha_i}$
+	- 복원 hint : ARCH식 양변 $E(\cdot)$ $\to$ conditional 변해도 장기 평균분산 O
 ```
 
 ## 내용 선택 기준
@@ -188,13 +193,13 @@
 
 - likelihood : data 고정, parameter 변화
 - PDF/JPDF와 likelihood의 수학형태 같고 해석 방향 반대
-- iid면 product -> log 취해 sum
+- iid면 product $\to$ log 취해 sum
 - FOC, score vector
 - OLS와 MLE 관계
 - 시계열 dep. 있으면 chain rule로 conditional density 곱
 - AR(1) conditional LL
-- ARMA에서 MA error 관측 X -> recursion/초기값
-- closed form X -> numerical optimization
+- ARMA에서 MA error 관측 X $\to$ recursion/초기값
+- closed form X $\to$ numerical optimization
 - global/local max, initial value 주의
 - Newton-Raphson, score, Hessian, information matrix
 - large sample 성질: consistent / asym. normal / efficient
@@ -203,7 +208,7 @@
 
 ```md
 - ts dep. : $f(y_T,\cdots,y_1)=\prod_t f(y_t|I_{t-1})\cdot initial$
-	- hint : 과거 $I_{t-1}$로 설명된 부분 제거 -> 새 innovation만 density로 평가
+	- hint : 과거 $I_{t-1}$로 설명된 부분 제거 $\to$ 새 innovation만 density로 평가
 ```
 
 ### GARCH
@@ -212,18 +217,18 @@
 
 - time-varying vola. / vola. clustering / fat tail / asym.
 - $I_t$와 conditional moment
-- 이미 알려진 정보 -> shock X
+- 이미 알려진 정보 $\to$ shock X
 - LIE 또는 nested info. 힌트
 - $\epsilon_t=\sigma_t z_t$
 - ARCH(1), ARCH(p)
 - 분산 양수 조건, 정상성 조건
-- unconditional variance 유도 힌트
+- unconditional $\sigma^2$ 유도 힌트
 - GARCH(p,q), GARCH(1,1)
 - $\alpha$ new shock, $\beta$ persistence, $\alpha+\beta$
 - GARCH-in-Mean
 - EGARCH/TGARCH 비대칭
 - 외생 volatility factor
-- volatility 직접 관측 X -> MLE
+- volatility 직접 관측 X $\to$ MLE
 - multivariate GARCH는 covariance/corr 동태화
 
 복원 힌트 예:
@@ -273,9 +278,9 @@
 목표는 장문 요약이 아니라 백지테스트용 치트시트 작성이야. 먼저 대상 노트의 현재 상태를 읽고, 강의 텍스트에서 해당 주제 키워드를 검색해서 교수님의 반복 강조사항/유도과정/주의사항을 확인해. 그 다음 끊긴 부분이나 부족한 부분을 치트시트 스타일로 채워.
 
 치트시트 스타일:
-- `정의 -> 핵심식 -> 직관/힌트`
+- `정의 $\to$ 핵심식 $\to$ 직관/힌트`
 - 문장형 설명 최소화
-- `->`, `O`, `X`, `?`, `/`, `↑`, `↓` 적극 사용
+- `$\to$`, `O`, `X`, `?`, `/`, `↑`, `↓` 적극 사용
 - 반복되는 핵심어는 처음에 `vola.(volatility)`처럼 정의 후 약어 사용
 - 한 상위항에 하위항 하나뿐이면 `상위항 : 하위항`으로 한 줄 처리
 - 수식은 여러 줄 전개보다 한 줄에 압축
