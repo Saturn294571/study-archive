@@ -9,7 +9,6 @@ study-archive/
 ├── contents/               # 비공개 원본, Git 추적 제외
 ├── docs/
 │   ├── notes/              # 공개 노트: 학기/과목/분류 계층
-│   ├── courses.md          # 자동 생성되는 학기·과목 목록
 │   ├── index.md
 │   └── about.md
 ├── scripts/
@@ -74,7 +73,6 @@ python3 scripts/import_notes.py contents \
 - `*`는 한 단계, `**`는 하위 폴더까지 선택합니다.
 - `--include`를 생략하면 공개 가능하다고 판단된 Markdown 전체가 대상입니다.
 - 강의자료, 학습자료, 강의 음성·전사, 시험 문제·정답, 임시 문서는 기본 제외됩니다.
-- 실행할 때 `docs/courses.md`도 현재 원본의 학기·과목 기준으로 갱신됩니다.
 
 가져온 문서에는 `generated: true`가 붙습니다. 같은 자동 생성 문서는 다시 실행할 때 갱신합니다. `generated: true`가 없는 수동 문서와 이름이 겹치면 수동 문서는 그대로 두고 새 파일에 `-imported`를 붙입니다. 스크립트는 기존 문서를 일괄 삭제하지 않습니다.
 
@@ -110,7 +108,7 @@ AREAS = {
 }
 ```
 
-제외할 폴더·과목은 같은 파일의 `EXCLUDED_PARTS`, `EXCLUDED_COURSES`에 추가합니다. 변경 뒤 가져오기 도구를 다시 실행해 `courses.md`를 갱신합니다.
+제외할 폴더·과목은 같은 파일의 `EXCLUDED_PARTS`, `EXCLUDED_COURSES`에 추가합니다.
 
 ## 6. MkDocs 설정
 

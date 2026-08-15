@@ -6,15 +6,12 @@ import fnmatch
 import json
 import re
 import unicodedata
-from collections import defaultdict
 from pathlib import Path
 
 from archive_schema import (
-    AREAS,
     EXCLUDED_COURSES,
     EXCLUDED_PARTS,
     SEMESTERS,
-    Course,
     NoteMetadata,
     Semester,
     course_name,
@@ -81,47 +78,6 @@ def frontmatter(metadata: NoteMetadata, *, math: bool) -> str:
     return "---\n" + "\n".join(lines) + "\n---\n"
 
 
-def discover_courses(source: Path) -> list[Course]:
-    courses = []
-    for term in SEMESTERS:
-        base = source / term.directory
-        if not base.is_dir():
-            continue
-        if term.directory == "25-여름 알고리즘":
-            names = ["알고리즘"]
-        else:
-            names = sorted(
-                course_name(path) for path in base.iterdir()
-                if path.is_dir() and not path.name.startswith("_") and path.name not in EXCLUDED_COURSES
-            )
-        courses.extend(Course(name, term, AREAS.get(name, "Course")) for name in names)
-    return courses
-
-
-def write_catalog(courses: list[Course], imported: dict[tuple[str, str], list[tuple[str, Path]]]) -> None:
-    grouped: dict[str, list[Course]] = defaultdict(list)
-    for course in courses:
-        grouped[course.semester.label].append(course)
-
-    lines = ["---", "title: 학기와 과목", "generated: true", "---", "", "# 학기와 과목", ""]
-    for term in SEMESTERS:
-        term_courses = grouped.get(term.label)
-        if not term_courses:
-            continue
-        lines.extend([f"## {term.label}", ""])
-        for course in term_courses:
-            lines.append(f"### {course.name}")
-            lines.append(f"`{course.area}`")
-            notes = imported.get((term.label, course.name), [])
-            if notes:
-                lines.append("")
-                for title, path in sorted(notes):
-                    relative = path.relative_to(DOCS_DIR).as_posix()
-                    lines.append(f"- [{title}]({relative})")
-            lines.append("")
-    (DOCS_DIR / "courses.md").write_text("\n".join(lines), encoding="utf-8")
-
-
 def selected(path: Path, patterns: list[str]) -> bool:
     return not patterns or any(fnmatch.fnmatch(path.as_posix(), pattern) for pattern in patterns)
 
@@ -152,7 +108,6 @@ def main() -> None:
     if args.limit is not None:
         candidates = candidates[:args.limit]
 
-    imported: dict[tuple[str, str], list[tuple[str, Path]]] = defaultdict(list)
     count = 0
     for term, path, parts, title in candidates:
         body = clean_body(path)
@@ -169,11 +124,9 @@ def main() -> None:
         )
         math = bool(re.search(r"\$[^$]+\$|\\\(|\\\[", body))
         destination.write_text(frontmatter(metadata, math=math) + "\n" + body + "\n", encoding="utf-8")
-        imported[(term.label, course)].append((title, destination))
         count += 1
         print(f"imported: {path.relative_to(source)} -> {destination.relative_to(ROOT)}")
 
-    write_catalog(discover_courses(source), imported)
     print(f"Imported {count} notes. Existing manual documents were preserved.")
 
 

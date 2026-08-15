@@ -6,8 +6,6 @@ title: Study Archive
 
 경제학·통계학·컴퓨터과학을 공부하며 정리한 학부 노트입니다.
 
-[학기와 과목 둘러보기](courses.md){ .md-button .md-button--primary }
-
 <div class="grid cards" markdown>
 
 -   **폴더 그대로 탐색**
