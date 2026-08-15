@@ -2,11 +2,18 @@
 4_Archive/기타 및 레거시/대학 정보/동아리 스터디/IGRUS/웹해킹 툴/install/
 *.exe
 
-# Jekyll and local tooling
+# Legacy Jekyll and local tooling
 _site/
 .jekyll-cache/
 .sass-cache/
 vendor/
 Gemfile.lock
+
+# MkDocs and Python local tooling
+site/
+.venv/
 __pycache__/
 *.pyc
+
+# Local source archive / excluded due to copyright and privacy
+contents/
