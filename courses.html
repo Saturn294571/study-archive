@@ -22,7 +22,11 @@ permalink: /courses/
           <h3>{{ course.name }}</h3>
           {% if course_notes.size > 0 %}
             <div class="course-notes">
-              {% for note in course_notes %}<a href="{{ note.url | relative_url }}">{{ note.title }} <span>↗</span></a>{% endfor %}
+              {% for note in course_notes %}
+                <a href="{{ note.url | relative_url }}">
+                  <span><small class="note-path">{{ note.section }}</small>{{ note.title }}</span><span>↗</span>
+                </a>
+              {% endfor %}
             </div>
           {% else %}
             <p class="empty-note">자료를 정리하고 있습니다.</p>
