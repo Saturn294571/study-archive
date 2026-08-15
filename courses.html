@@ -1,0 +1,35 @@
+---
+layout: default
+title: 과목
+permalink: /courses/
+---
+<section class="page-intro">
+  <p class="eyebrow">COURSE INDEX</p>
+  <h1>학부 과정</h1>
+  <p>학기별 과목과 공개 노트를 탐색할 수 있습니다.</p>
+  <label class="search"><span>⌕</span><input id="course-search" type="search" placeholder="과목 또는 노트 검색" autocomplete="off"></label>
+</section>
+<div class="semester-index">
+{% for semester in site.data.semesters %}
+  <section class="semester section-block">
+    <div class="semester-title"><span>{{ semester.number }}</span><div><p class="eyebrow">SEMESTER</p><h2>{{ semester.label }}</h2></div></div>
+    <div class="course-grid">
+      {% assign term_courses = site.data.courses | where: 'semester', semester.label %}
+      {% for course in term_courses %}
+        {% assign course_notes = site.notes | where: 'course', course.name | where: 'semester', semester.label %}
+        <article class="course-card" data-search="{{ course.name }} {{ course.area }}{% for note in course_notes %} {{ note.title }}{% endfor %}">
+          <div class="course-card-head"><span>{{ course.area }}</span><small>{{ course_notes.size }} notes</small></div>
+          <h3>{{ course.name }}</h3>
+          {% if course_notes.size > 0 %}
+            <div class="course-notes">
+              {% for note in course_notes %}<a href="{{ note.url | relative_url }}">{{ note.title }} <span>↗</span></a>{% endfor %}
+            </div>
+          {% else %}
+            <p class="empty-note">자료를 정리하고 있습니다.</p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}
+</div>
