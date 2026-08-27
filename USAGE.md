@@ -69,10 +69,23 @@ python3 scripts/import_notes.py contents \
   --limit 5
 ```
 
+학기별 정리·필기본만 과목 폴더로 가져오기:
+
+```bash
+python3 scripts/import_notes.py contents \
+  --include '4-2학기/*/1_요약 및 정리/*' \
+  --summary-only \
+  --flatten \
+  --include-pdf
+```
+
+이 조합은 `docs/notes/4-2학부/과목명/` 바로 아래에 Markdown과 정리본 PDF를 배치합니다. Markdown이 참조하는 이미지만 과목별 `img/`로 복사하고 링크를 자동 수정합니다. `2_학습자료`, `3_기타`, 강의 텍스트 자체는 공개 경로에 복사하지 않습니다.
+
 - 경로는 `contents/` 기준이며 한글·공백이 있으므로 작은따옴표로 감쌉니다.
 - `*`는 한 단계, `**`는 하위 폴더까지 선택합니다.
 - `--include`를 생략하면 공개 가능하다고 판단된 Markdown 전체가 대상입니다.
 - 강의자료, 학습자료, 강의 음성·전사, 시험 문제·정답, 임시 문서는 기본 제외됩니다.
+- `--include-pdf`는 선택 범위 안의 PDF만 포함하므로 `--summary-only`와 함께 사용합니다.
 
 가져온 문서에는 `generated: true`가 붙습니다. 같은 자동 생성 문서는 다시 실행할 때 갱신합니다. `generated: true`가 없는 수동 문서와 이름이 겹치면 수동 문서는 그대로 두고 새 파일에 `-imported`를 붙입니다. 스크립트는 기존 문서를 일괄 삭제하지 않습니다.
 
@@ -99,7 +112,7 @@ path_segments: ["계량중간"]
 학기와 원본 폴더 대응은 `scripts/archive_schema.py`의 `SEMESTERS`, 과목 분야는 `AREAS`에서 관리합니다.
 
 ```python
-Semester("11", "새 학기", "contents 안의 새 학기 폴더")
+Semester("11", "새 학기", "contents 안의 새 학기 폴더", "사이트 학기 폴더")
 ```
 
 ```python

@@ -9,6 +9,11 @@ class Semester:
     number: str
     label: str
     directory: str
+    publish_directory: str | None = None
+
+    @property
+    def output_directory(self) -> str:
+        return self.publish_directory or self.directory
 
 
 @dataclass(frozen=True)
@@ -50,7 +55,7 @@ SEMESTERS = (
     Semester("07", "여름 집중 과정", "25-여름 알고리즘"),
     Semester("08", "3학년 · 2학기", "3-2학부"),
     Semester("09", "4학년 · 1학기", "4-1 학부"),
-    Semester("10", "4학년 · 2학기", "4-2학기"),
+    Semester("10", "4학년 · 2학기", "4-2학기", "4-2학부"),
 )
 
 AREAS = {
