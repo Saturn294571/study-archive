@@ -1,115 +1,262 @@
 #!/usr/bin/env python3
-import hashlib
+"""선택한 원본 Markdown을 MkDocs 문서로 안전하게 가져온다."""
+
+import argparse
+import fnmatch
 import json
 import re
 import shutil
-import sys
+import unicodedata
 from pathlib import Path
+from urllib.parse import quote, unquote
 
-source = Path(sys.argv[1])
-root = Path(__file__).resolve().parent.parent
-notes_dir = root / "_notes"
-data_dir = root / "_data"
-shutil.rmtree(notes_dir, ignore_errors=True)
-notes_dir.mkdir(parents=True)
-data_dir.mkdir(parents=True, exist_ok=True)
+from archive_schema import (
+    EXCLUDED_COURSES,
+    EXCLUDED_PARTS,
+    SEMESTERS,
+    NoteMetadata,
+    Semester,
+    course_name,
+)
 
-semesters = [
-    {"number": "01", "label": "1학년 · 1학기", "directory": "1-1 학부 수업"},
-    {"number": "02", "label": "1학년 · 2학기", "directory": "1-2 학부 수업"},
-    {"number": "03", "label": "2024 · 2학기", "directory": "24-2 학부 공부"},
-    {"number": "04", "label": "3학년 · 1학기", "directory": "3-1 학부 공부"},
-    {"number": "05", "label": "여름 집중 과정", "directory": "25-여름 알고리즘"},
-    {"number": "06", "label": "3학년 · 2학기", "directory": "3-2학부"},
-    {"number": "07", "label": "4학년 · 1학기", "directory": "4-1 학부"},
-    {"number": "08", "label": "4학년 · 2학기", "directory": "4-2학기"},
-]
-areas = {
-    "글로벌경제론": "Economics", "사회보장론": "Economics", "금융투자론": "Economics",
-    "기술경제학": "Economics", "후생경제학": "Economics", "계량경제학": "Econometrics",
-    "회귀분석": "Statistics", "전산통계": "Data Science", "데이터마이닝": "Data Science",
-    "선형대수학": "Mathematics", "데이터베이스": "Computer Science", "컴퓨터네트워크": "Computer Science",
-    "프로그램언어": "Computer Science", "자료구조론": "Computer Science", "컴퓨터시스템": "Computer Science",
-    "컴퓨팅사고와 데이터분석 기초": "Data Science", "알고리즘": "Computer Science",
-    "경제수학": "Mathematics", "경제원론": "Economics", "경제원론 2": "Economics",
-    "금융계량경제학": "Econometrics", "회계원리": "Accounting",
-    "소프트웨어와 인공지능 이해 및 응용": "Computer Science",
-    "통계학": "Statistics", "미래사회와 소프트웨어": "Computer Science",
-    "대학 기초 영어": "Liberal Arts", "의사소통 영어 [중급]": "Liberal Arts",
-    "문제해결을 위한 글쓰기": "Liberal Arts", "크로스오버 1": "Liberal Arts",
-    "크로스오버 2": "Liberal Arts", "프로네시스 세미나": "Liberal Arts",
-    "나눔 프로젝트": "Project", "실전 스타트업": "Entrepreneurship",
-    "인하특강 [기업가정신과 창업]": "Entrepreneurship",
-}
+ROOT = Path(__file__).resolve().parent.parent
+DOCS_DIR = ROOT / "docs"
+NOTES_DIR = DOCS_DIR / "notes"
 
-def course_name(name):
-    return re.sub(r"^1학기\s+", "", name)
 
-courses = []
-for term in semesters:
-    term_dir = source / term["directory"]
-    if not term_dir.is_dir():
-        continue
-    names = sorted(
-        course_name(path.name) for path in term_dir.iterdir()
-        if path.is_dir() and not path.name.startswith("_") and path.name not in {"AAPM", "학습효율"}
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("source", type=Path, help="원본 contents 디렉터리")
+    parser.add_argument(
+        "--include", action="append", default=[], metavar="GLOB",
+        help="가져올 contents 기준 glob. 여러 번 지정할 수 있습니다.",
     )
-    if term["directory"] == "25-여름 알고리즘":
-        names = ["알고리즘"]
-    courses.extend({"name": name, "semester": term["label"], "area": areas.get(name, "Course")} for name in names)
+    parser.add_argument("--limit", type=int, help="가져올 최대 문서 수")
+    parser.add_argument(
+        "--summary-only", action="store_true",
+        help="각 과목의 1_요약 및 정리 폴더만 가져옵니다.",
+    )
+    parser.add_argument(
+        "--flatten", action="store_true",
+        help="정리 폴더의 Markdown과 PDF를 과목 폴더 바로 아래에 배치합니다.",
+    )
+    parser.add_argument(
+        "--include-pdf", action="store_true",
+        help="선택된 정리 폴더 안의 PDF도 함께 가져옵니다.",
+    )
+    return parser.parse_args()
 
-candidates = []
-for term in semesters:
-    base = source / term["directory"]
-    if not base.is_dir():
-        continue
-    for path in sorted(base.rglob("*.md")):
-        relative = path.relative_to(base)
-        parts = relative.parts
-        course = "알고리즘" if term["directory"] == "25-여름 알고리즘" else course_name(parts[0])
-        title = path.stem
-        if (parts[0].startswith("_") or parts[0] in {"AAPM", "학습효율"} or "음성" in parts
-                or "강의 텍스트" in parts or "3_기타" in parts
-                or re.search(r"^Index$|^무제|\(old\)|숙제|문제 및 정답|TEACHER$", title, re.I)):
-            continue
-        section_parts = [part for part in parts[1:-1] if part != "필기"]
-        candidates.append({
-            "path": path, "title": title, "course": course, "semester": term["label"],
-            "section": " · ".join(section_parts) or "학습 노트", "raw": str(relative), "in_notes": "필기" in parts,
-        })
 
-groups = {}
-for item in candidates:
-    groups.setdefault((item["semester"], item["course"], item["title"]), []).append(item)
-for versions in groups.values():
-    item = min(versions, key=lambda version: (version["in_notes"], len(version["raw"])))
-    body = item["path"].read_text(encoding="utf-8")
+def slug(value: str) -> str:
+    value = unicodedata.normalize("NFC", value).strip()
+    value = re.sub(r"^1학기\s+", "", value)
+    value = re.sub(r"[^\w.-]+", "-", value, flags=re.UNICODE)
+    return value.strip("-._") or "note"
+
+
+def generated(path: Path) -> bool:
+    if not path.is_file():
+        return False
+    return bool(re.search(r"^generated:\s*true\s*$", path.read_text(encoding="utf-8", errors="ignore")[:2000], re.M))
+
+
+def course_directory(term: Semester, course: str) -> Path:
+    return NOTES_DIR / slug(term.output_directory) / slug(course)
+
+
+def destination_for(term: Semester, parts: tuple[str, ...], title: str, *, flatten: bool) -> Path:
+    course = "알고리즘" if term.directory == "25-여름 알고리즘" else course_name(parts[0])
+    directory = course_directory(term, course)
+    if not flatten:
+        for section in parts[1:-1]:
+            directory /= slug(section)
+    candidate = directory / f"{slug(title)}.md"
+    if not candidate.exists() or generated(candidate):
+        return candidate
+    suffix = 1
+    while True:
+        marker = "-imported" if suffix == 1 else f"-imported-{suffix}"
+        alternative = candidate.with_name(f"{candidate.stem}{marker}.md")
+        if not alternative.exists() or generated(alternative):
+            return alternative
+        suffix += 1
+
+
+def find_local_asset(reference: str, note: Path, course_root: Path) -> Path | None:
+    decoded = unquote(reference.split("#", 1)[0]).strip().strip("<>")
+    if not decoded or re.match(r"^(?:https?:|data:|mailto:)", decoded, re.I):
+        return None
+    direct = (note.parent / decoded).resolve()
+    if direct.is_file():
+        return direct
+    name = Path(decoded).name
+    matches = sorted(path for path in course_root.rglob(name) if path.is_file())
+    return matches[0] if matches else None
+
+
+def copy_image(reference: str, note: Path, course_root: Path, destination: Path) -> str | None:
+    source = find_local_asset(reference, note, course_root)
+    if source is None or source.suffix.lower() not in {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"}:
+        return None
+    image_dir = destination.parent / "img"
+    image_dir.mkdir(parents=True, exist_ok=True)
+    target = image_dir / source.name
+    if target.exists() and target.read_bytes() != source.read_bytes():
+        target = image_dir / f"{source.stem}-{slug(str(source.parent.relative_to(course_root)))}{source.suffix.lower()}"
+    shutil.copy2(source, target)
+    return f"img/{quote(target.name)}"
+
+
+def clean_body(path: Path, course_root: Path, destination: Path) -> str:
+    body = path.read_text(encoding="utf-8")
     body = re.sub(r"\A---\s*\n.*?\n---\s*\n", "", body, flags=re.S)
-    body = re.sub(r"!\[\[([^\]]+)\]\]", r"*첨부 이미지: \1*", body)
+
+    def replace_obsidian_image(match: re.Match[str]) -> str:
+        reference = match.group(1).split("|", 1)[0]
+        copied = copy_image(reference, path, course_root, destination)
+        return f"![]({copied})" if copied else f"*이미지 파일을 찾을 수 없음: {reference}*"
+
+    def replace_markdown_image(match: re.Match[str]) -> str:
+        alt, reference = match.group(1), match.group(2)
+        copied = copy_image(reference, path, course_root, destination)
+        return f"![{alt}]({copied})" if copied else match.group(0)
+
+    def replace_markdown_link(match: re.Match[str]) -> str:
+        label, reference = match.group(1), match.group(2)
+        decoded = unquote(reference).strip().strip("<>")
+        if re.match(r"^(?:https?:|mailto:|#)", decoded, re.I):
+            return match.group(0)
+        source = find_local_asset(reference, path, course_root)
+        if source and source.suffix.lower() == ".pdf" and "1_요약 및 정리" in source.parts:
+            return f"[{label}]({quote(source.name)})"
+        return f"{label} *(비공개 원자료)*"
+
+    body = re.sub(r"!\[\[([^\]]+)\]\]", replace_obsidian_image, body)
+    body = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", replace_markdown_image, body)
+    body = re.sub(r"(?<!!)\[([^\]]+)\]\(([^)]+)\)", replace_markdown_link, body)
     body = re.sub(r"\[\[([^\]|]+)\|([^\]]+)\]\]", r"\2", body)
     body = re.sub(r"\[\[([^\]]+)\]\]", r"\1", body)
-    body = "\n".join(line.rstrip() for line in body.splitlines()).rstrip() + "\n"
-    if not body.strip():
-        continue
-    digest = hashlib.sha1(f'{item["semester"]}/{item["course"]}/{item["raw"]}'.encode()).hexdigest()[:12]
-    filename = f"{digest}.md"
-    metadata = {
-        "title": item["title"], "semester": item["semester"], "course": item["course"],
-        "section": item["section"], "math": bool(re.search(r"\$[^$]+\$|\\\(|\\\[", body)),
-        "source_path": f"_notes/{filename}",
-    }
-    frontmatter = "---\n" + "\n".join(f"{key}: {json.dumps(value, ensure_ascii=False)}" for key, value in metadata.items()) + "\n---\n"
-    (notes_dir / filename).write_text(frontmatter + body, encoding="utf-8")
+    return "\n".join(line.rstrip() for line in body.splitlines()).strip()
 
-def write_yaml(path, items):
-    lines = []
-    for item in items:
-        first = True
-        for key, value in item.items():
-            lines.append(f"{'- ' if first else '  '}{key}: {json.dumps(value, ensure_ascii=False)}")
-            first = False
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
-write_yaml(data_dir / "semesters.yml", [{key: value for key, value in term.items() if key != "directory"} for term in semesters])
-write_yaml(data_dir / "courses.yml", courses)
-print(f"Imported {len(list(notes_dir.glob('*.md')))} notes across {len(courses)} courses.")
+def frontmatter(metadata: NoteMetadata, *, math: bool) -> str:
+    values = metadata.as_dict() | {"math": math}
+    lines = [f"{key}: {json.dumps(value, ensure_ascii=False)}" for key, value in values.items()]
+    return "---\n" + "\n".join(lines) + "\n---\n"
+
+
+def selected(path: Path, patterns: list[str]) -> bool:
+    return not patterns or any(fnmatch.fnmatch(path.as_posix(), pattern) for pattern in patterns)
+
+
+def is_summary(parts: tuple[str, ...]) -> bool:
+    return len(parts) >= 3 and parts[1] == "1_요약 및 정리"
+
+
+def write_course_index(
+    term: Semester,
+    course: str,
+    notes: list[tuple[str, Path]],
+    pdfs: list[Path],
+) -> None:
+    directory = course_directory(term, course)
+    index = directory / "index.md"
+    if index.exists() and not generated(index):
+        print(f"preserved manual index: {index.relative_to(ROOT)}")
+        return
+    lines = [
+        "---", f"title: {json.dumps(course, ensure_ascii=False)}", "generated: true", "---", "",
+        f"# {course}", "", f"{term.label} 정리·필기본입니다.", "", "## 노트", "",
+    ]
+    lines.extend(f"- [{title}]({quote(path.name)})" for title, path in sorted(notes))
+    if pdfs:
+        lines.extend(["", "## PDF 정리본", ""])
+        lines.extend(f"- [{path.stem}]({quote(path.name)})" for path in sorted(pdfs))
+    index.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def main() -> None:
+    args = parse_args()
+    source = args.source.resolve()
+    if not source.is_dir():
+        raise SystemExit(f"Source directory not found: {source}")
+    NOTES_DIR.mkdir(parents=True, exist_ok=True)
+
+    candidates = []
+    for term in SEMESTERS:
+        base = source / term.directory
+        if not base.is_dir():
+            continue
+        for path in sorted(base.rglob("*.md")):
+            relative_source = path.relative_to(source)
+            parts = path.relative_to(base).parts
+            title = path.stem
+            if not selected(relative_source, args.include):
+                continue
+            if args.summary_only and not is_summary(parts):
+                continue
+            if (parts[0].startswith("_") or parts[0] in EXCLUDED_COURSES
+                    or any(part in EXCLUDED_PARTS for part in parts)
+                    or re.search(r"^Index$|^무제|\(old\)|문제 및 정답|TEACHER$|^CHEATSHEET$", title, re.I)):
+                continue
+            candidates.append((term, path, parts, title))
+    if args.limit is not None:
+        candidates = candidates[:args.limit]
+
+    imported_notes: dict[tuple[Semester, str], list[tuple[str, Path]]] = {}
+    imported_pdfs: dict[tuple[Semester, str], list[Path]] = {}
+    count = 0
+    for term, path, parts, title in candidates:
+        course = "알고리즘" if term.directory == "25-여름 알고리즘" else course_name(parts[0])
+        destination = destination_for(term, parts, title, flatten=args.flatten)
+        body = clean_body(path, source / term.directory / parts[0], destination)
+        if not body:
+            continue
+        sections = tuple(parts[2:-1] if args.summary_only else parts[1:-1])
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        metadata = NoteMetadata(
+            title=title, semester=term.label, course=course,
+            section=" · ".join(sections) or "학습 노트", path_segments=sections,
+            source_path=path.relative_to(source).as_posix(),
+        )
+        math = bool(re.search(r"\$[^$]+\$|\\\(|\\\[", body))
+        destination.write_text(frontmatter(metadata, math=math) + "\n" + body + "\n", encoding="utf-8")
+        imported_notes.setdefault((term, course), []).append((title, destination))
+        count += 1
+        print(f"imported: {path.relative_to(source)} -> {destination.relative_to(ROOT)}")
+
+    pdf_count = 0
+    if args.include_pdf:
+        for term in SEMESTERS:
+            base = source / term.directory
+            if not base.is_dir():
+                continue
+            for path in sorted(base.rglob("*.pdf")):
+                relative_source = path.relative_to(source)
+                parts = path.relative_to(base).parts
+                if not selected(relative_source, args.include):
+                    continue
+                if args.summary_only and not is_summary(parts):
+                    continue
+                if parts[0].startswith("_") or parts[0] in EXCLUDED_COURSES:
+                    continue
+                course = "알고리즘" if term.directory == "25-여름 알고리즘" else course_name(parts[0])
+                directory = course_directory(term, course)
+                if not args.flatten:
+                    for section in parts[1:-1]:
+                        directory /= slug(section)
+                directory.mkdir(parents=True, exist_ok=True)
+                destination = directory / path.name
+                shutil.copy2(path, destination)
+                imported_pdfs.setdefault((term, course), []).append(destination)
+                pdf_count += 1
+                print(f"imported PDF: {path.relative_to(source)} -> {destination.relative_to(ROOT)}")
+
+    for key in sorted(set(imported_notes) | set(imported_pdfs), key=lambda item: item[0].number + item[1]):
+        write_course_index(key[0], key[1], imported_notes.get(key, []), imported_pdfs.get(key, []))
+
+    print(f"Imported {count} notes and {pdf_count} PDFs. Existing manual documents were preserved.")
+
+
+if __name__ == "__main__":
+    main()

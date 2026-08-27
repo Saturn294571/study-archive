@@ -1,0 +1,69 @@
+site_name: Study Archive
+site_description: 경제학·통계학·컴퓨터과학 학부 노트
+site_url: https://saturn294571.github.io/study-archive/
+repo_url: https://github.com/saturn294571/study-archive
+repo_name: saturn294571/study-archive
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: ko
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: red
+      toggle:
+        icon: material/weather-night
+        name: 어두운 화면으로 전환
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: green
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: 밝은 화면으로 전환
+
+plugins:
+  - search:
+      lang:
+        - ko
+        - en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js

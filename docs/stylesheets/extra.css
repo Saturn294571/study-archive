@@ -1,0 +1,24 @@
+:root {
+  --archive-paper: #f5f0e6;
+  --archive-ink: #26332b;
+  --archive-rule: #a33b35;
+}
+
+[data-md-color-scheme="default"] body {
+  background: var(--archive-paper);
+  color: var(--archive-ink);
+}
+
+.md-typeset h1,
+.md-typeset h2 {
+  font-family: Georgia, "Noto Serif KR", serif;
+}
+
+.md-typeset h1 {
+  border-bottom: 2px solid var(--archive-rule);
+  padding-bottom: 0.3rem;
+}
+
+.md-typeset .grid.cards > ul > li {
+  background: color-mix(in srgb, var(--archive-paper) 82%, white);
+}
