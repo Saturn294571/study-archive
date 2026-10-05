@@ -13,11 +13,14 @@ mkdocs serve
 
 브라우저에서 `http://127.0.0.1:8000/study-archive/`를 엽니다. 자세한 관리·가져오기·배포 방법은 [USAGE.md](USAGE.md)를 참고하세요.
 
-`contents/`는 Git에서 추적하지 않는 원본 보관소입니다. 공개할 문서만 Python 도구로 `docs/notes/`에 복사합니다.
+배포 전 검사는 `python3 scripts/deploy.py`, 검증된 `main`의 배포는 `python3 scripts/deploy.py --push`로 실행합니다. 배포 스크립트는 자동 커밋하지 않습니다.
+
+`contents/`는 Git에서 추적하지 않는 원본 보관소입니다. 공개할 정리·필기본은 `_notes/학기/과목/`에 선별하고, Python 도구로 `docs/notes/`에 복사합니다.
 
 ```bash
-python3 scripts/import_notes.py contents \
-  --include '4-1 학부/계량경제학/계량중간/*.md'
+python3 scripts/import_notes.py _notes \
+  --include '4-1학부/계량경제학/*' \
+  --include-pdf
 ```
 
 ## 저작권과 라이선스

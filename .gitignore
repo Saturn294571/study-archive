@@ -17,3 +17,4 @@ __pycache__/
 
 # Local source archive / excluded due to copyright and privacy
 contents/
+_notes/

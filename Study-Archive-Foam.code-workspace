@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "path": "knowledge",
+      "name": "Study Archive Knowledge Graph"
+    }
+  ],
+  "settings": {
+    "foam.workspace": "${workspaceFolder}"
+  },
+  "extensions": {
+    "recommendations": [
+      "foam.foam-vscode"
+    ]
+  }
+}

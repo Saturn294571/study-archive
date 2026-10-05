@@ -1,12 +1,13 @@
 # Study Archive 사용 가이드
 
-이 저장소는 로컬 `contents/`의 원본 중 공개할 Markdown만 골라 MkDocs 사이트로 게시합니다.
+이 저장소는 로컬 `contents/`에 원자료를 보관하고, 공개할 정리·필기본만 `_notes/`에 선별한 뒤 MkDocs 사이트로 게시합니다.
 
 ## 1. 구조
 
 ```text
 study-archive/
 ├── contents/               # 비공개 원본, Git 추적 제외
+├── _notes/                 # 공개 후보 정리·필기본, Git 추적 제외
 ├── docs/
 │   ├── notes/              # 공개 노트: 학기/과목/분류 계층
 │   ├── index.md
@@ -56,36 +57,34 @@ mkdocs build --strict
 파일 하나:
 
 ```bash
-python3 scripts/import_notes.py contents \
-  --include '4-1 학부/계량경제학/계량중간/4. 가설검정.md'
+python3 scripts/import_notes.py _notes \
+  --include '4-1학부/계량경제학/4. 가설검정.md'
 ```
 
 여러 폴더나 파일:
 
 ```bash
-python3 scripts/import_notes.py contents \
-  --include '24-2 학부 공부/컴퓨터네트워크/**/*.md' \
-  --include '4-1 학부/계량경제학/계량중간/*.md' \
+python3 scripts/import_notes.py _notes \
+  --include '3-1학부/컴퓨터네트워크/*' \
+  --include '4-1학부/계량경제학/*' \
   --limit 5
 ```
 
 학기별 정리·필기본만 과목 폴더로 가져오기:
 
 ```bash
-python3 scripts/import_notes.py contents \
-  --include '4-2학기/*/1_요약 및 정리/*' \
-  --summary-only \
-  --flatten \
+python3 scripts/import_notes.py _notes \
+  --include '4-2학부/*' \
   --include-pdf
 ```
 
-이 조합은 `docs/notes/4-2학부/과목명/` 바로 아래에 Markdown과 정리본 PDF를 배치합니다. Markdown이 참조하는 이미지만 과목별 `img/`로 복사하고 링크를 자동 수정합니다. `2_학습자료`, `3_기타`, 강의 텍스트 자체는 공개 경로에 복사하지 않습니다.
+이 조합은 `_notes/4-2학부/과목명/`의 Markdown과 정리본 PDF를 `docs/notes/4-2학부/과목명/`으로 가져옵니다. Markdown이 참조하는 이미지는 과목별 `img/`에서 복사하고 링크를 자동 수정합니다. 강의 원자료와 강의 텍스트는 `_notes/`에 넣지 않습니다.
 
-- 경로는 `contents/` 기준이며 한글·공백이 있으므로 작은따옴표로 감쌉니다.
+- `--include` 경로는 명령의 원본 디렉터리(`contents/` 또는 `_notes/`) 기준이며, 한글·공백이 있으므로 작은따옴표로 감쌉니다.
 - `*`는 한 단계, `**`는 하위 폴더까지 선택합니다.
 - `--include`를 생략하면 공개 가능하다고 판단된 Markdown 전체가 대상입니다.
 - 강의자료, 학습자료, 강의 음성·전사, 시험 문제·정답, 임시 문서는 기본 제외됩니다.
-- `--include-pdf`는 선택 범위 안의 PDF만 포함하므로 `--summary-only`와 함께 사용합니다.
+- `--include-pdf`는 선택 범위 안의 PDF도 함께 가져옵니다. `_notes/`에는 공개할 총정리본 PDF만 넣습니다.
 
 가져온 문서에는 `generated: true`가 붙습니다. 같은 자동 생성 문서는 다시 실행할 때 갱신합니다. `generated: true`가 없는 수동 문서와 이름이 겹치면 수동 문서는 그대로 두고 새 파일에 `-imported`를 붙입니다. 스크립트는 기존 문서를 일괄 삭제하지 않습니다.
 
@@ -112,7 +111,7 @@ path_segments: ["계량중간"]
 학기와 원본 폴더 대응은 `scripts/archive_schema.py`의 `SEMESTERS`, 과목 분야는 `AREAS`에서 관리합니다.
 
 ```python
-Semester("11", "새 학기", "contents 안의 새 학기 폴더", "사이트 학기 폴더")
+Semester("10", "새 학년 · 새 학기", "n-m학부")
 ```
 
 ```python
@@ -139,20 +138,28 @@ AREAS = {
 
 `main`에 반영되면 `.github/workflows/pages.yml`이 Python 설치 → MkDocs 빌드 → Pages 배포를 수행합니다. 저장소 **Settings → Pages → Source**는 **GitHub Actions**로 설정합니다.
 
-일반적인 작업 순서:
+먼저 비공개 파일, 로컬 절대경로, Git diff와 MkDocs 빌드를 검사합니다. 이 명령은 푸시하지 않습니다.
+
+```bash
+python3 scripts/deploy.py
+```
+
+검토한 변경을 직접 커밋한 뒤 실제 배포를 시작합니다.
 
 ```bash
 git status
 git add docs scripts mkdocs.yml requirements.txt .python-version .github/workflows/pages.yml
 git commit -m "Add selected study notes"
-git push
+python3 scripts/deploy.py --push
 ```
 
-`contents/`, `.venv/`, `site/`는 커밋하지 않습니다. PR 브랜치에서는 병합 후 `main` 배포가 시작됩니다.
+`--push`는 현재 브랜치가 `main`이고 작업 트리가 깨끗하며 원격보다 뒤처지지 않았을 때만 `origin/main`으로 푸시합니다. 자동 커밋이나 자동 pull은 하지 않습니다. 푸시 후 실제 배포 결과는 GitHub Actions에서 확인합니다.
+
+`contents/`, `_notes/`, `.venv/`, `site/`는 커밋하지 않습니다. PR 브랜치에서는 병합 후 `main` 배포가 시작됩니다.
 
 ## 8. 문제 해결
 
-- 가져오기가 0개면 `--include`가 `contents/` 기준인지, 제외 폴더인지 확인합니다.
+- 가져오기가 0개면 `--include`가 지정한 원본 디렉터리 기준인지, 제외 폴더인지 확인합니다.
 - 메뉴 계층이 이상하면 파일이 `docs/notes/학기/과목/...` 아래 있는지 확인합니다.
 - 수식이 안 보이면 브라우저 콘솔 오류와 `mkdocs.yml`의 MathJax 스크립트를 확인합니다.
 - 배포 실패는 먼저 로컬에서 `mkdocs build --strict`를 실행한 뒤 Actions 로그를 확인합니다.

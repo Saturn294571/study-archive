@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "path": "contents",
+      "name": "contents archive"
+    }
+  ],
+  "settings": {
+    "foam.workspace": "${workspaceFolder}",
+    "foam.graph.views": [
+      {
+        "name": "Default",
+        "show": {
+          "image": {
+            "enabled": false
+          }
+        }
+      }
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "foam.foam-vscode"
+    ]
+  }
+}
